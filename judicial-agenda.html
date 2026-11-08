@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14304f">
+<title>الأجندة القضائية — المستشار محمد موسى</title>
+<style>
+:root{--bg:#eef2f7;--card:#fff;--ink:#0f172a;--mut:#64748b;--line:#d5dde8;--soft:#e8eef5;--pri:#14304f;--pri2:#1d4f82;--acc:#b45309;--ok:#047857;--bad:#b91c1c;--hl:#fff68a;--side:#14304f;--sideink:#dbe7f5;--th:#dde6f0}
+[data-theme=dark]{--bg:#0b1220;--card:#131c2e;--ink:#e5ecf6;--mut:#94a3b8;--line:#26344d;--soft:#1a2740;--pri:#5b9bd5;--pri2:#7db3e6;--acc:#f59e0b;--ok:#34d399;--bad:#f87171;--hl:#5c5a12;--side:#0a1424;--sideink:#b8c8dd;--th:#1d2a44}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;font-size:15px}
+button,input,select,textarea{font:inherit;color:inherit}
+#side{position:fixed;top:0;bottom:0;right:0;width:228px;background:var(--side);color:var(--sideink);overflow:auto;z-index:30;display:flex;flex-direction:column}
+#side{background:linear-gradient(180deg,#0d2238,#14304f 60%,#0d2238)}#side .brand{padding:16px 14px;font-weight:700;font-size:17px;color:#fff;border-bottom:1px solid rgba(201,162,74,.45);display:flex;gap:10px;align-items:center;line-height:1.35}#side .brand small{font-size:12.5px;color:#e6c777;font-weight:600}.hero{display:flex;align-items:center;gap:14px;background:linear-gradient(120deg,#0d2238,#1d4f82);color:#fff;border-radius:14px;padding:14px 18px;margin-bottom:14px;border-bottom:4px solid #c9a24a}.hero b{font-size:19px}.hero small{display:block;color:#e6c777;margin-top:2px}.hero svg{width:54px;height:54px;flex:none}
+#side nav{padding:8px 0;flex:1}
+#side a{display:flex;gap:10px;align-items:center;padding:11px 16px;color:var(--sideink);cursor:pointer;font-size:14.5px;border-inline-start:4px solid transparent}
+#side a:hover{background:rgba(255,255,255,.07)}
+#side a.on{background:rgba(255,255,255,.13);color:#fff;font-weight:700;border-inline-start-color:#c9a24a}
+#side a i{font-style:normal;width:22px;text-align:center}
+#side a b{margin-inline-start:auto;background:var(--acc);color:#fff;border-radius:10px;font-size:11px;padding:0 7px}
+#side .foot{padding:10px 14px;font-size:11px;opacity:.6}
+#top{position:sticky;top:0;z-index:20;margin-right:0;background:var(--card);border-bottom:1px solid var(--line);padding:9px 20px;display:flex;gap:12px;align-items:center}
+#top h1{margin:0;font-size:18px;flex:0 0 auto}
+#top .sp{flex:1}
+#top input{max-width:280px;padding:8px 12px;border:1px solid var(--line);border-radius:20px;background:var(--bg)}
+#top .dt{font-size:13px;color:var(--mut);white-space:nowrap}
+#burger{display:none;border:0;background:none;font-size:24px;cursor:pointer}
+main{padding:18px 20px 110px}
+.btn{border:0;border-radius:8px;padding:9px 14px;background:var(--pri);color:#fff;cursor:pointer;font-size:14px;display:inline-flex;gap:6px;align-items:center;white-space:nowrap}
+[data-theme=dark] .btn{color:#0b1220}
+.btn.sec{background:var(--soft);color:var(--ink)}
+.btn.red{background:var(--bad);color:#fff}
+.btn.ok{background:var(--ok);color:#fff}
+.btn.sm{padding:5px 10px;font-size:13px}
+.btn:disabled{opacity:.5}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.bar .sp{flex:1}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+input[type=checkbox]{width:auto}
+textarea{min-height:64px}
+label.l{display:block;font-size:12.5px;color:var(--mut);margin:0 0 4px}
+.card{background:var(--card);border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.08)}
+.card h3{margin:0 0 10px;font-size:16px}
+.meta{font-size:13px;color:var(--mut)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.stat{background:var(--card);border-radius:12px;padding:14px;cursor:pointer;box-shadow:0 1px 3px rgba(15,23,42,.08);border-top:4px solid var(--pri2);transition:transform .1s}
+.stat:hover{transform:translateY(-2px)}
+.stat .v{font-size:30px;font-weight:700;margin-top:4px}
+.stat .t{font-size:13px;color:var(--mut)}
+.stat.w{border-top-color:var(--acc)}.stat.r{border-top-color:var(--bad)}.stat.g{border-top-color:var(--ok)}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;text-align:center}
+th{background:var(--th);padding:9px 7px;font-size:13.5px;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0}
+td{padding:9px 7px;font-size:14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr.row{cursor:pointer}tr.row:hover td{background:var(--soft)}
+tr.hl td{background:var(--hl)!important;color:#111}
+tr.pend td{opacity:.78;font-style:italic}
+td.l,th.l{text-align:right}
+.chip{display:inline-block;border-radius:12px;padding:1px 9px;font-size:12px;background:var(--soft);color:var(--ink);margin:1px}
+.chip.w{background:#fef3c7;color:#92400e}.chip.r{background:#fee2e2;color:#991b1b}.chip.g{background:#d1fae5;color:#065f46}.chip.b{background:#dbeafe;color:#1e40af}
+.sub{display:block;font-size:11.5px;color:var(--mut)}
+.title{text-align:center;margin:4px 0 12px}.title b{display:block;font-size:20px;text-decoration:underline}.title span{font-size:17px;font-weight:700}
+.empty{text-align:center;color:var(--mut);padding:40px 10px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{border:0;background:var(--soft);padding:8px 14px;border-radius:20px;cursor:pointer}
+.tabs button.on{background:var(--pri);color:#fff}[data-theme=dark] .tabs button.on{color:#0b1220}
+.tabs button b{margin-inline-start:6px;font-weight:600;opacity:.8}
+#m1,#m2{position:fixed;inset:0;background:rgba(10,18,32,.55);z-index:50;display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:4vh 10px}
+#m2{z-index:60}
+.mbox{background:var(--card);border-radius:14px;padding:18px;width:min(760px,100%);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.mbox.wide{width:min(980px,100%)}
+.mbox h3{margin:0 0 12px;font-size:18px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px}.fg .f2{grid-column:1/-1}
+.hint{padding:9px 11px;border-radius:8px;background:#fffbeb;border:1px dashed var(--acc);font-size:13.5px;color:#78350f}
+.tl{border-inline-start:3px solid var(--line);margin:8px 6px 0 0;padding-inline-start:12px}
+.tl .it{position:relative;margin-bottom:10px;padding:8px 10px;background:var(--soft);border-radius:8px}
+.tl .it.last{outline:2px solid var(--ok)}
+.tl .it:before{content:"";position:absolute;inset-inline-start:-20px;top:14px;width:11px;height:11px;border-radius:50%;background:var(--pri2)}
+.tl .acts button{border:0;background:none;color:var(--pri2);text-decoration:underline;cursor:pointer;font-size:13px;padding:2px 6px}
+.status{padding:9px 12px;border-radius:8px;background:#ecfdf5;border-inline-start:4px solid var(--ok);color:#064e3b}
+.status.warn{background:#fffbeb;border-color:var(--acc);color:#78350f}
+.files{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-top:8px}
+.fc{border:1px solid var(--line);border-radius:8px;padding:6px;text-align:center}
+.fc .th{height:90px;display:flex;align-items:center;justify-content:center;background:var(--soft);border-radius:6px;overflow:hidden;cursor:pointer;font-size:34px}
+.fc .th img{width:100%;height:100%;object-fit:cover}
+.fc .fn{font-size:11px;color:var(--mut);margin:4px 0;word-break:break-all;max-height:28px;overflow:hidden}
+.fc button{border:0;background:none;color:var(--bad);font-size:12px;text-decoration:underline;cursor:pointer}
+.drop{border:2px dashed var(--line);border-radius:10px;padding:10px;text-align:center}
+#viewer{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:80;display:none;flex-direction:column;align-items:center;justify-content:center;padding:10px}
+#viewer img{max-width:100%;max-height:85vh;object-fit:contain}
+#viewer .vb{display:flex;gap:10px;margin-bottom:10px}
+body.dragging:after{content:"أفلت الملفات هنا لإرفاقها";position:fixed;inset:0;background:rgba(20,48,79,.85);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:90;pointer-events:none}
+#toast{position:fixed;bottom:92px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:10px 18px;border-radius:22px;z-index:99;display:none;font-size:14px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:150px;padding-top:6px}
+.bars div{flex:1;text-align:center;font-size:11px;color:var(--mut);display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.bars i{display:block;background:var(--pri2);border-radius:4px 4px 0 0;min-height:2px}
+.bars div.cur i{background:var(--acc)}
+.bars b{font-size:12px;color:var(--ink)}
+.res{margin-top:12px;padding:12px;border-radius:10px;background:var(--soft);line-height:2}
+.res b.big{font-size:20px;color:var(--pri2)}
+.two{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+#printArea{display:none}
+#side{top:auto;left:0;right:0;bottom:0;width:auto;flex-direction:row;overflow:visible;border-top:2px solid #c9a24a;box-shadow:0 -4px 18px rgba(0,0,0,.25);padding-bottom:env(safe-area-inset-bottom)}
+#side .brand,#side .foot{display:none}
+#side nav{display:flex;overflow-x:auto;padding:0;flex:1;scrollbar-width:thin}
+#side a{flex:1 0 auto;flex-direction:column;gap:2px;padding:7px 10px 6px;font-size:11.5px;min-width:76px;text-align:center;justify-content:center;border-inline-start:0;border-top:3px solid transparent;white-space:nowrap;position:relative}
+#side a.on{border-top-color:#c9a24a;background:rgba(255,255,255,.14)}
+#side a i{font-size:20px;width:auto}
+#side a b{position:absolute;top:3px;inset-inline-start:calc(50% + 6px);margin:0}
+#top .tb{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--pri);padding-inline-end:10px;border-inline-end:1px solid var(--line)}
+#top .tb svg{width:34px;height:34px}
+#welcome{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#1d4f82,#0a1626);z-index:120;display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}
+#welcome .wb{background:rgba(255,255,255,.07);backdrop-filter:blur(4px);border:1px solid rgba(201,162,74,.6);border-radius:20px;padding:30px 26px;max-width:560px;width:100%;text-align:center;color:#fff;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+#welcome .wb svg{width:84px;height:84px}
+#welcome .bis{font-size:22px;color:#e6c777;margin:10px 0 4px}
+#welcome .sal{font-size:25px;font-weight:700;line-height:1.9;margin:14px 0;color:#fff}
+#welcome p{font-size:15.5px;line-height:2;color:#dbe7f5;margin:8px 0}
+#welcome .nm{font-size:13px;color:#e6c777;margin-top:14px}
+#welcome .wbtn{border:0;border-radius:30px;padding:12px 26px;font-size:17px;cursor:pointer;margin:6px;font-family:inherit}
+#welcome .g{background:linear-gradient(135deg,#f3d98b,#b8892c);color:#1a1205;font-weight:700}
+#welcome .o{background:rgba(255,255,255,.14);color:#fff}
+#welcome .cnt{font-size:14px;color:#e6c777;min-height:22px}
+@media (max-width:900px){
+ #top .dt,#top input{display:none}
+ #top .tb span{display:none}
+ main{padding:12px 10px 40px}
+ .two{grid-template-columns:1fr}.fg{grid-template-columns:1fr}
+}
+/* ---------- طباعة / PDF ---------- */
+@media print{
+ body.printing>*:not(#printArea){display:none!important}
+ body.printing{background:#fff;color:#000}
+ body.printing #printArea{display:block}
+ #printArea{font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",sans-serif;color:#000;font-size:12.5px}
+ #printArea .ph{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #000;padding-bottom:6px;margin-bottom:10px}
+ #printArea .ph b{font-size:15px}
+ #printArea h2{text-align:center;margin:6px 0 2px;font-size:19px;text-decoration:underline}
+ #printArea h4{margin:12px 0 4px;font-size:14px;border-bottom:1px solid #999}
+ #printArea .sd{text-align:center;font-weight:700;margin-bottom:8px;font-size:15px}
+ #printArea table{width:100%;border-collapse:collapse;margin-bottom:8px}
+ #printArea th{background:#d9d9d9!important;border:1px solid #000;padding:5px 4px;-webkit-print-color-adjust:exact;print-color-adjust:exact;position:static}
+ #printArea td{border:1px solid #000;padding:5px 4px;color:#000}
+ #printArea tr{page-break-inside:avoid}
+ #printArea tr.hl td{background:#fff68a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ #printArea .kv{display:grid;grid-template-columns:150px 1fr;gap:3px 10px;margin:4px 0 8px}
+ #printArea .kv span:nth-child(odd){font-weight:700}
+ #printArea .pf{margin-top:14px;font-size:10.5px;color:#444;text-align:center}
+ #printArea img.att{max-width:100%;max-height:230mm;display:block;margin:6px auto;border:1px solid #888}
+ #printArea .pb{page-break-before:always}
+}
+</style>
+</head>
+<body>
+<aside id="side"><div class="brand"><svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d98b"/><stop offset="1" stop-color="#b8892c"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="#0d2238" stroke="url(#gg)" stroke-width="3"/><g stroke="url(#gg)" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M32 12v34"/><path d="M19 20h26"/><path d="M24 46h16"/><path d="M19 20l-7 15h14z" fill="rgba(243,217,139,.18)"/><path d="M45 20l-7 15h14z" fill="rgba(243,217,139,.18)"/></g><circle cx="32" cy="12" r="2.6" fill="url(#gg)"/></svg><div><div>الأجندة القضائية</div><small>المستشار / محمد موسى</small></div></div><nav id="nav"></nav><div class="foot">© المستشار / محمد موسى<br>البيانات محفوظة على هذا الجهاز فقط — خُذ نسخة احتياطية دورياً</div></aside>
+<div id="top"><span class="tb"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d98b"/><stop offset="1" stop-color="#b8892c"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="#0d2238" stroke="url(#gg2)" stroke-width="3"/><g stroke="url(#gg2)" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M32 12v34"/><path d="M19 20h26"/><path d="M24 46h16"/><path d="M19 20l-7 15h14z" fill="rgba(243,217,139,.18)"/><path d="M45 20l-7 15h14z" fill="rgba(243,217,139,.18)"/></g><circle cx="32" cy="12" r="2.6" fill="url(#gg2)"/></svg><span>المستشار / محمد موسى</span></span><h1 id="ttl"></h1><span class="sp"></span><input id="gq" placeholder="🔍 بحث سريع (Enter)" onkeydown="if(event.key==='Enter'){cf.q=this.value;cf.tab='all';go('cases');this.value=''}"><span class="dt" id="dt"></span></div>
+<main id="app"></main>
+<div id="m1" onmousedown="if(event.target===this)closeM1()"></div>
+<div id="m2" onmousedown="if(event.target===this)closeM2()"></div>
+<div id="viewer" onclick="if(event.target===this)closeViewer()"></div>
+<div id="welcome"><div class="wb"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d98b"/><stop offset="1" stop-color="#b8892c"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="#0d2238" stroke="url(#gg3)" stroke-width="3"/><g stroke="url(#gg3)" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M32 12v34"/><path d="M19 20h26"/><path d="M24 46h16"/><path d="M19 20l-7 15h14z" fill="rgba(243,217,139,.18)"/><path d="M45 20l-7 15h14z" fill="rgba(243,217,139,.18)"/></g><circle cx="32" cy="12" r="2.6" fill="url(#gg3)"/></svg><div class="bis">بسم الله الرحمن الرحيم</div><div class="sal">اللهم صلِّ وسلِّم وبارك<br>على سيدنا محمد ﷺ<br>وعلى آله وصحبه أجمعين</div><p>أخي المستخدم الكريم، قبل أن تبدأ عملك: <b>صلِّ على النبي ﷺ</b>،<br>فقد قال ﷺ: «من صلّى عليّ صلاةً صلّى الله عليه بها عشراً».</p><div class="cnt" id="wcnt"></div><button class="wbtn g" onclick="salawat()">صلى الله عليه وسلم ﷺ</button><button class="wbtn o" onclick="closeWelcome()">ابدأ العمل ←</button><div class="nm">الأجندة القضائية — المستشار / محمد موسى</div></div></div>
+<div id="toast"></div>
+<div id="printArea"></div>
+
+<script>
+'use strict';
+/* =============== البيانات =============== */
+const K2='agenda_v2';
+function norm(d){d=d||{};d.rows=d.rows||[];d.pend=d.pend||[];d.lib=d.lib||[];d.courts=d.courts||[];d.circuits=d.circuits||[];d.meta=d.meta||{};d.settings=Object.assign({welcome:true,office:'',appealDays:60,theme:'light',holidays:'',lastBackup:''},d.settings||{});return d}
+let db=(()=>{try{let s=localStorage.getItem(K2);if(s)return norm(JSON.parse(s));s=localStorage.getItem('agenda_v1');if(s)return norm(JSON.parse(s))}catch(e){}return norm()})();
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+const save=()=>{try{localStorage.setItem(K2,JSON.stringify(db))}catch(e){toast('تعذر الحفظ التلقائي — صدّر نسخة احتياطية')}};
+let tab='home',cf={tab:'active',q:'',circuit:'',sort:'act'},selDate='',curCase=null,fcount={},fmap={},urlsBy={},FM=null,KR=[];
+
+/* =============== أدوات =============== */
+const $=id=>document.getElementById(id);
+const AR='٠١٢٣٤٥٦٧٨٩';
+const toAr=s=>String(s??'').replace(/\d/g,d=>AR[d]);
+const toEn=s=>String(s??'').replace(/[٠-٩]/g,d=>AR.indexOf(d));
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nn=s=>toEn(s).replace(/[ً-ٟـ]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ة/g,'ه').replace(/ى/g,'ي').replace(/ئ/g,'ي').replace(/\s+/g,' ').trim();
+const num=s=>{const d=toEn(s).replace(/\D/g,'');return d?String(parseInt(d,10)):''};
+const key=r=>num(r.no)+'|'+num(r.year)+'|'+nn(r.plaintiff);
+const fmt=d=>d?toAr(d.replace(/-/g,'/')):'';
+const pad=n=>String(n).padStart(2,'0');
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const D=s=>new Date(s+'T00:00:00Z');
+const iso=d=>d.toISOString().slice(0,10);
+const today=()=>{const d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())};
+const addDays=(s,n)=>{const d=D(s);d.setUTCDate(d.getUTCDate()+n);return iso(d)};
+const diffDays=(a,b)=>Math.round((D(b)-D(a))/864e5);
+const addMonths=(s,n)=>{const d=D(s),day=d.getUTCDate();d.setUTCDate(1);d.setUTCMonth(d.getUTCMonth()+n);const last=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth()+1,0)).getUTCDate();d.setUTCDate(Math.min(day,last));return iso(d)};
+const DN=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const MN=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const dayName=s=>s?DN[D(s).getUTCDay()]:'';
+const ki=k=>{KR.push(k);return KR.length-1};
+let tt;function toast(m){const t=$('toast');t.textContent=m;t.style.display='block';clearTimeout(tt);tt=setTimeout(()=>t.style.display='none',2600)}
+const BRAND='المستشار / محمد موسى';
+const DECISIONS=['تأجيل لجلسة','حجز للتقرير','حجز للحكم','حكم','إحالة لهيئة مفوضين','ضم','شطب','وقف','إعادة للمرافعة','تقديم مستندات','تقديم مذكرات'];
+
+/* =============== منطق القضايا =============== */
+function decText(r){if(!r)return'—';if(r.next)return(r.decision||'تأجيل')+(/لجلسة/.test(r.decision||'')?' ':' لجلسة ')+fmt(r.next);return r.decision||'—'}
+function allCases(){
+  const m=new Map();
+  [...db.rows].sort((a,b)=>a.date<b.date?-1:a.date>b.date?1:(a.ts||0)-(b.ts||0)).forEach(r=>{const k=key(r);if(!m.has(k))m.set(k,[]);m.get(k).push(r)});
+  return [...m].map(([k,list])=>{
+    const last=list[list.length-1],meta=db.meta[k]||{};
+    const pick=f=>{for(let i=list.length-1;i>=0;i--)if(list[i][f])return list[i][f];return''};
+    let st='active';if(meta.archived)st='archived';else if(/شطب/.test(last.decision||''))st='struck';
+    return{key:k,list,last,first:list[0],meta,st,reserved:st==='active'&&/حجز/.test(last.decision||''),
+      circuit:pick('circuit'),subject:pick('subject'),rollNo:pick('rollNo'),no:last.no,year:last.year,plaintiff:last.plaintiff,defendant:pick('defendant')}
+  });
+}
+const caseBy=k=>allCases().find(c=>c.key===k);
+function appealLeft(c){const j=c.meta.judgment;return j&&j.appealEnd?diffDays(today(),j.appealEnd):null}
+function rollFor(d){
+  const cs=allCases(),by=new Map(cs.map(c=>[c.key,c]));
+  const rec=db.rows.filter(r=>r.date===d).sort((a,b)=>(a.ts||0)-(b.ts||0)).map(r=>({row:r,c:by.get(key(r))}));
+  const have=new Set(rec.map(x=>x.c.key));
+  const pend=cs.filter(c=>c.st==='active'&&!have.has(c.key)&&c.last.next===d&&c.last.date<d).map(c=>({pending:true,c,row:null}));
+  const sorter=(a,b)=>((a.c.circuit||'')>(b.c.circuit||'')?1:(a.c.circuit||'')<(b.c.circuit||'')?-1:0)||(num(a.c.rollNo)-num(b.c.rollNo))||0;
+  return [...rec,...pend.sort(sorter)];
+}
+function cfld(c,f){return f==='circuit'||f==='subject'||f==='rollNo'?c[f]:c.last[f]}
+
+/* =============== المرفقات (IndexedDB) =============== */
+let _idb;
+function idb(){return _idb||(_idb=new Promise((res,rej)=>{const o=indexedDB.open('agenda_files',1);o.onupgradeneeded=()=>{const s=o.result.createObjectStore('files',{keyPath:'id'});s.createIndex('ref','ref')};o.onsuccess=()=>res(o.result);o.onerror=()=>rej(o.error)}))}
+async function fTx(mode,fn){const d=await idb();return new Promise((res,rej)=>{const t=d.transaction('files',mode),r=fn(t.objectStore('files'));t.oncomplete=()=>res(r&&r.result);t.onerror=()=>rej(t.error)})}
+const fPut=f=>fTx('readwrite',s=>s.put(f)),fDel=id=>fTx('readwrite',s=>s.delete(id)),fAll=()=>fTx('readonly',s=>s.getAll());
+async function fByRefs(refs){const d=await idb();const parts=await Promise.all(refs.map(ref=>new Promise((res,rej)=>{const r=d.transaction('files').objectStore('files').index('ref').getAll(IDBKeyRange.only(ref));r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})));return parts.flat().sort((a,b)=>a.ts-b.ts)}
+async function refreshCounts(){try{const d=await idb();await new Promise(res=>{const m={},c=d.transaction('files').objectStore('files').index('ref').openKeyCursor();c.onsuccess=()=>{const k=c.result;if(k){m[k.key]=(m[k.key]||0)+1;k.continue()}else{fcount=m;res()}};c.onerror=()=>res()})}catch(e){}}
+function shrink(file){return new Promise(res=>{if(!/^image\//.test(file.type))return res(file);const im=new Image(),u=URL.createObjectURL(file);im.onload=()=>{const M=2200,k=Math.min(1,M/Math.max(im.width,im.height));if(k===1&&file.size<900000){URL.revokeObjectURL(u);return res(file)}const c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>{URL.revokeObjectURL(u);res(b||file)},'image/jpeg',.85)};im.onerror=()=>{URL.revokeObjectURL(u);res(file)};im.src=u})}
+async function addFiles(ref,list){
+  const fs=[...list].filter(f=>/^image\/|application\/pdf/.test(f.type)||/\.(pdf|jpe?g|png|tiff?|bmp|webp)$/i.test(f.name));
+  if(!fs.length){toast('اختر صوراً أو ملفات PDF');return}
+  try{for(const f of fs){const b=await shrink(f);await fPut({id:uid(),ref,name:f.name,type:b.type||f.type,size:b.size,ts:Date.now(),blob:b})}await refreshCounts();toast('تم إرفاق '+toAr(fs.length)+' ملف ✔')}catch(e){toast('تعذر حفظ الملف في هذا المتصفح')}
+  if(curCase)openCase(curCase);else render();
+}
+const attBtns=ref=>`<div class="bar" style="justify-content:center;margin:6px 0"><label class="btn sec sm">📷 كاميرا / ماسح<input type="file" accept="image/*" capture="environment" multiple hidden onchange="addFiles('${ref}',[...this.files]);this.value=''"></label><label class="btn sec sm">📎 إرفاق صور / PDF<input type="file" accept="image/*,application/pdf" multiple hidden onchange="addFiles('${ref}',[...this.files]);this.value=''"></label></div>`;
+const fileCard=f=>`<div class="fc"><div class="th" onclick="viewFile('${f.id}')">${/^image\//.test(f.type)?`<img data-id="${f.id}" alt="">`:'<span>📄</span>'}</div><div class="fn">${esc(f.name)}</div><button onclick="delFile('${f.id}')">حذف</button></div>`;
+async function loadFiles(refs,boxId){
+  const box=$(boxId);if(!box)return;(urlsBy[boxId]||[]).forEach(u=>URL.revokeObjectURL(u));urlsBy[boxId]=[];
+  try{const fs=await fByRefs(refs);if($(boxId)!==box)return;box.innerHTML=fs.length?fs.map(fileCard).join(''):'<div class="meta">لا توجد مرفقات بعد</div>';fs.forEach(f=>{fmap[f.id]=f});box.querySelectorAll('img[data-id]').forEach(im=>{const u=URL.createObjectURL(fmap[im.dataset.id].blob);urlsBy[boxId].push(u);im.src=u})}catch(e){box.innerHTML='<div class="meta">المرفقات غير متاحة في هذا المتصفح</div>'}
+}
+function viewFile(id){const f=fmap[id];if(!f)return;const u=URL.createObjectURL(f.blob);if(/pdf/.test(f.type)||/\.pdf$/i.test(f.name)){window.open(u,'_blank');return}$('viewer').innerHTML=`<div class="vb"><button class="btn" onclick="closeViewer()">✕ إغلاق</button><a class="btn sec" href="${u}" download="${esc(f.name)}">⬇️ تحميل</a></div><img src="${u}" alt="">`;$('viewer').style.display='flex'}
+function closeViewer(){$('viewer').style.display='none';$('viewer').innerHTML=''}
+async function delFile(id){if(!confirm('حذف هذا المرفق؟'))return;try{await fDel(id);delete fmap[id];await refreshCounts()}catch(e){}if(curCase)openCase(curCase);else render()}
+['dragenter','dragover'].forEach(e=>addEventListener(e,ev=>{if(ev.dataTransfer&&[...ev.dataTransfer.types].includes('Files')){ev.preventDefault();document.body.classList.add('dragging')}}));
+addEventListener('dragleave',ev=>{if(!ev.relatedTarget)document.body.classList.remove('dragging')});
+addEventListener('drop',ev=>{ev.preventDefault();document.body.classList.remove('dragging');const fs=ev.dataTransfer&&ev.dataTransfer.files;if(!fs||!fs.length)return;
+  if(curCase){const c=caseBy(curCase);if(c)return addFiles('r:'+c.last.id,[...fs])}
+  if(tab==='roll')return addFiles('d:'+selDate,[...fs]);
+  toast('افتح دعوى أو صفحة الجلسات ثم أفلت الملفات')});
+
+/* =============== نوافذ ونماذج =============== */
+function showM(id,html){const m=$(id);m.innerHTML=html;m.style.display='flex'}
+function closeM1(){curCase=null;$('m1').style.display='none';(urlsBy.files||[]).forEach(u=>URL.revokeObjectURL(u));urlsBy.files=[]}
+function closeM2(){$('m2').style.display='none';FM=null}
+addEventListener('keydown',e=>{if(e.key==='Escape'){if($('viewer').style.display==='flex')closeViewer();else if($('m2').style.display==='flex')closeM2();else if($('m1').style.display==='flex')closeM1()}});
+function fieldHTML(f){
+  const v=f.value??'',cls=f.full?'f2':'',id='ff_'+f.id,req=f.req?' <span style="color:var(--bad)">*</span>':'';
+  let inp;
+  if(f.type==='select')inp=`<select id="${id}">${(f.options||[]).map(o=>{const [val,lab]=Array.isArray(o)?o:[o,o];return`<option value="${esc(val)}" ${String(v)===String(val)?'selected':''}>${esc(lab)}</option>`}).join('')}</select>`;
+  else if(f.type==='textarea')inp=`<textarea id="${id}">${esc(v)}</textarea>`;
+  else if(f.type==='check')return`<label class="${cls}" style="display:flex;gap:8px;align-items:center;margin-top:4px"><input type="checkbox" id="${id}" ${v?'checked':''}> ${esc(f.label)}</label>`;
+  else inp=`<input id="${id}" type="${f.type||'text'}" value="${esc(v)}" ${f.list?`list="dl_${f.id}"`:''} ${f.inputmode?`inputmode="${f.inputmode}"`:''} ${f.ro?'readonly':''} autocomplete="off">`+(f.list?`<datalist id="dl_${f.id}">${f.list.map(x=>`<option value="${esc(x)}">`).join('')}</datalist>`:'');
+  return`<div class="${cls}"><label class="l">${esc(f.label)}${req}</label>${inp}</div>`;
+}
+function openForm(title,fields,onOk,opts={}){
+  FM={fields,onOk};
+  showM('m2',`<div class="mbox"><h3>${title}</h3>${opts.top||''}<div class="fg">${fields.map(fieldHTML).join('')}</div><div id="fhint" style="margin-top:10px"></div><div class="bar" style="margin:14px 0 0"><button class="btn" onclick="submitForm()">${opts.ok||'💾 حفظ'}</button><button class="btn sec" onclick="closeM2()">إلغاء</button></div></div>`);
+  if(opts.after)opts.after();
+  const f0=$('ff_'+fields.find(f=>!f.ro&&f.type!=='check')?.id);if(f0&&!/Mobi|Android/i.test(navigator.userAgent))f0.focus();
+}
+const fv=id=>{const e=$('ff_'+id);return e?(e.type==='checkbox'?e.checked:e.value.trim()):''};
+function submitForm(){
+  if(!FM)return;const v={};
+  for(const f of FM.fields){v[f.id]=fv(f.id);if(f.req&&!v[f.id]){toast('أكمل الحقل: '+f.label);const e=$('ff_'+f.id);e&&e.focus();return}}
+  const r=FM.onOk(v);if(r!==false)closeM2();
+}
+
+/* =============== الأقسام =============== */
+const NAV=[['home','🏠','الرئيسية'],['work','🗓️','أعمال اليوم'],['roll','📋','رول الجلسات'],['cases','🗂️','القضايا'],['inq','🔎','الاستعلام الشامل'],['pend','📥','قضايا تحت الرفع'],['bulk','🔁','ترحيل مجمّع'],['judg','⚖️','الأحكام والطعون'],['shelf','📌','الشعبة (المحجوزة)'],['archive','🗄️','الأرشيف'],['circ','🏛️','الدوائر'],['legal','🧮','الخدمات القانونية'],['set','⚙️','الإعدادات والنسخ']];
+const TITLES=Object.fromEntries(NAV.map(n=>[n[0],n[2]]));
+function badge(t){const cs=allCases();const a=cs.filter(c=>c.st==='active');
+  if(t==='cases')return a.length;if(t==='shelf')return a.filter(c=>c.reserved).length;
+  if(t==='work')return a.filter(c=>c.last.next&&c.last.next<today()).length;return 0}
+function render(){
+  KR=[];
+  $('nav').innerHTML=NAV.map(n=>{const b=badge(n[0]);return`<a class="${tab===n[0]?'on':''}" onclick="go('${n[0]}')"><i>${n[1]}</i>${n[2]}${b?`<b>${toAr(b)}</b>`:''}</a>`}).join('');
+  $('ttl').textContent=TITLES[tab];
+  $('dt').textContent=dayName(today())+' '+fmt(today());
+  document.documentElement.setAttribute('data-theme',db.settings.theme==='dark'?'dark':'light');
+  $('app').innerHTML=({home:vHome,work:vWork,roll:vRoll,cases:vCases,inq:vInq,pend:vPend,bulk:vBulk,judg:vJudg,shelf:vShelf,archive:vArchive,circ:vCirc,legal:vLegal,set:vSet})[tab]();
+  if(tab==='roll')loadFiles(['d:'+selDate],'dfiles');
+  if(tab==='legal')legalInit();
+}
+function go(t){tab=t;document.body.classList.remove('menu');render();window.scrollTo(0,0)}
+
+/* ----- الرئيسية ----- */
+function vHome(){
+  const cs=allCases(),t=today(),wk=addDays(t,7),act=cs.filter(c=>c.st==='active');
+  const st=(lab,v,cls,fn)=>`<div class="stat ${cls}" onclick="${fn}"><div class="t">${lab}</div><div class="v">${toAr(v)}</div></div>`;
+  const appeal=cs.filter(c=>c.meta.judgment&&!c.meta.archived&&appealLeft(c)!=null&&appealLeft(c)>=0&&appealLeft(c)<=15).length;
+  const overdue=act.filter(c=>c.last.next&&c.last.next<t).length;
+  // إحصاء الجلسات بالأشهر
+  const set=new Set();db.rows.forEach(r=>set.add(key(r)+'|'+r.date));act.forEach(c=>{if(c.last.next)set.add(c.key+'|'+c.last.next)});
+  const byM={};set.forEach(s=>{const d=s.split('|').pop().slice(0,7);byM[d]=(byM[d]||0)+1});
+  const cur=t.slice(0,7),ms=[];for(let i=-3;i<=8;i++){ms.push(addMonths(cur+'-01',i).slice(0,7))}
+  const mx=Math.max(1,...ms.map(m=>byM[m]||0));
+  const stale=!db.settings.lastBackup||diffDays(db.settings.lastBackup,t)>14;
+  return`<div class="hero">${document.querySelector('#side .brand svg').outerHTML.replace('width="38" height="38"','')}<div><b>أهلاً بك — ${BRAND}</b><small>${dayName(t)} ${fmt(t)} — الأجندة القضائية الإلكترونية</small></div></div>${db.rows.length&&stale?`<div class="status warn" style="margin-bottom:14px">💾 لم تأخذ نسخة احتياطية منذ مدة${db.settings.lastBackup?'':' (لم تأخذ أي نسخة بعد)'}. <a href="#" onclick="go('set');return false" style="color:inherit;font-weight:700">خذ نسخة الآن</a></div>`:''}
+  <div class="grid">${st('القضايا المتداولة',act.length,'','cf.tab=\'active\';go(\'cases\')')}${st('جلسات هذا الأسبوع',act.filter(c=>c.last.next&&c.last.next>=t&&c.last.next<=wk).length,'','go(\'work\')')}${st('المحجوزة للحكم/التقرير',act.filter(c=>c.reserved).length,'w','go(\'shelf\')')}${st('جلسات مضت بلا تسجيل',overdue,overdue?'r':'g','go(\'work\')')}${st('مواعيد طعن خلال ١٥ يوماً',appeal,appeal?'r':'g','go(\'judg\')')}${st('الأحكام المسجلة',cs.filter(c=>c.meta.judgment).length,'','go(\'judg\')')}${st('الأرشيف (المحفوظة)',cs.filter(c=>c.st==='archived').length,'g','go(\'archive\')')}${st('المشطوبة',cs.filter(c=>c.st==='struck').length,'','cf.tab=\'struck\';go(\'cases\')')}</div>
+  <div class="card" style="margin-top:14px"><h3>📊 عدد الجلسات بالأشهر</h3><div class="bars">${ms.map(m=>{const v=byM[m]||0,[y,mo]=m.split('-');return`<div class="${m===cur?'cur':''}"><b>${v?toAr(v):''}</b><i style="height:${Math.round(v/mx*100)}%"></i>${MN[+mo-1].slice(0,5)}<br>${toAr(y.slice(2))}</div>`}).join('')}</div></div>
+  <div class="two"><div class="card"><h3>⏭️ أقرب الجلسات القادمة</h3>${nextList(act.filter(c=>c.last.next&&c.last.next>=t).sort((a,b)=>a.last.next<b.last.next?-1:1).slice(0,8))}</div>
+  <div class="card"><h3>🚀 ابدأ من هنا</h3><div class="bar"><button class="btn" onclick="addCase({date:today()})">➕ قضية جديدة</button><button class="btn sec" onclick="selDate=today();go('roll')">📋 رول اليوم</button><button class="btn sec" onclick="go('legal')">🧮 الخدمات القانونية</button></div>${db.circuits.length?'':'<p class="meta">ابدأ بتسجيل <a href="#" onclick="go(\'circ\');return false">الدوائر</a> لتظهر في القضايا والرول.</p>'}</div></div>`;
+}
+function nextList(arr){return arr.length?`<div class="tw"><table><tbody>${arr.map(c=>`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td class="l"><b>${esc(c.plaintiff)}</b><span class="sub">${toAr(c.no)} / ${toAr(c.year)} — ${esc(c.defendant)}</span></td><td>${fmt(c.last.next)}<span class="sub">${dayName(c.last.next)}</span></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">لا توجد جلسات قادمة مسجلة</div>'}
+
+/* ----- أعمال اليوم ----- */
+function vWork(){
+  const cs=allCases(),t=today(),act=cs.filter(c=>c.st==='active');
+  const todayRoll=rollFor(t),week=act.filter(c=>c.last.next&&c.last.next>t&&c.last.next<=addDays(t,7)).sort((a,b)=>a.last.next<b.last.next?-1:1);
+  const late=act.filter(c=>c.last.next&&c.last.next<t).sort((a,b)=>a.last.next<b.last.next?-1:1);
+  const ap=cs.filter(c=>c.meta.judgment&&!c.meta.archived&&appealLeft(c)!=null&&appealLeft(c)>=0&&appealLeft(c)<=30).sort((a,b)=>appealLeft(a)-appealLeft(b));
+  const row=(c,extra)=>`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td class="l"><b>${esc(c.plaintiff)}</b><span class="sub">${toAr(c.no)} / ${toAr(c.year)} — ${esc(c.defendant)}</span></td><td>${extra}</td></tr>`;
+  const tb=(arr,f)=>arr.length?`<div class="tw"><table><tbody>${arr.map(f).join('')}</tbody></table></div>`:'<div class="empty" style="padding:16px">لا يوجد</div>';
+  return`<div class="two"><div class="card"><h3>📋 جلسات اليوم (${toAr(todayRoll.length)})</h3>${tb(todayRoll,x=>row(x.c,x.pending?'<span class="chip w">لم يُسجل القرار</span>':esc(decText(x.row))))}<div class="bar" style="margin:10px 0 0"><button class="btn sm" onclick="selDate=today();go('roll')">فتح رول اليوم</button></div></div>
+  <div class="card"><h3>📅 جلسات الأسبوع القادم (${toAr(week.length)})</h3>${tb(week,c=>row(c,fmt(c.last.next)+'<span class="sub">'+dayName(c.last.next)+'</span>'))}</div>
+  <div class="card"><h3 style="color:var(--bad)">⚠️ جلسات مضت بلا تسجيل نتيجة (${toAr(late.length)})</h3>${tb(late,c=>row(c,fmt(c.last.next)+'<span class="sub">منذ '+toAr(diffDays(c.last.next,t))+' يوم</span>'))}</div>
+  <div class="card"><h3>⏳ مواعيد الطعن القريبة (${toAr(ap.length)})</h3>${tb(ap,c=>row(c,fmt(c.meta.judgment.appealEnd)+'<span class="sub">متبقي '+toAr(appealLeft(c))+' يوم</span>'))}</div></div>`;
+}
+
+/* ----- رول الجلسات ----- */
+function allDates(){return[...new Set(db.rows.map(r=>r.date))].sort()}
+function vRoll(){
+  if(!selDate){const t=today(),ds=allDates();selDate=ds.includes(t)||!ds.length?t:ds[ds.length-1]}
+  const items=rollFor(selDate),ds=allDates().slice(-14).reverse();
+  const body=items.map((x,i)=>{const c=x.c,r=x.row;
+    return`<tr class="row ${r&&r.mark?'hl':''} ${x.pending?'pend':''}" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b>${c.list.length>1?`<span class="chip w">🔗${toAr(c.list.length)}</span>`:''}</td><td>${toAr(c.year)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${esc(c.circuit)}</td><td>${x.pending?'<span class="chip w">مؤجلة إلى هذا التاريخ — لم يُسجل القرار</span>':esc(decText(r))}${prevOf(c,r)}</td><td>${fmt(r?r.next:'')}</td><td onclick="event.stopPropagation()">${x.pending?`<button class="btn sm" onclick="recordSession(KR[${ki(c.key)}],{date:'${selDate}'})">تسجيل القرار</button>`:`<button class="btn sm sec" onclick="editRowForm('${r.id}')">✎</button>`}</td></tr>`}).join('');
+  return`<div class="bar"><button class="btn sec sm" onclick="shiftDate(1)">▶</button><input type="date" style="width:170px" value="${selDate}" onchange="selDate=this.value;render()"><button class="btn sec sm" onclick="shiftDate(-1)">◀</button><button class="btn sec sm" onclick="selDate=today();render()">اليوم</button><span class="sp"></span><button class="btn" onclick="addCase({date:selDate})">➕ إضافة قضية للجلسة</button><button class="btn sec" onclick="printRoll(selDate)">🖨️ طباعة / PDF</button><button class="btn sec" onclick="csvRoll(selDate)">⬇️ Excel</button></div>
+  <div class="title"><b>جلسة</b><span>${dayName(selDate)} ${fmt(selDate)}</span></div>
+  ${items.length?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة القضائية</th><th>المدعي</th><th>المدعى عليه</th><th>الدائرة</th><th>نوع القرار</th><th>الجلسة القادمة</th><th></th></tr></thead><tbody>${body}</tbody></table></div><p class="meta">💡 الدعاوى المؤجلة إلى هذا التاريخ تظهر هنا تلقائياً (بخط مائل) لتسجّل قرارها بضغطة واحدة.</p>`:'<div class="empty">لا توجد دعاوى في هذا التاريخ</div>'}
+  ${ds.length?`<div class="card"><h3>🗓️ آخر الجلسات المسجلة</h3>${ds.map(d=>`<span class="chip b" style="cursor:pointer;padding:4px 12px" onclick="selDate='${d}';render()">${fmt(d)} (${toAr(db.rows.filter(r=>r.date===d).length)})</span>`).join(' ')}</div>`:''}
+  <div class="card noprint"><b>📎 مرفقات هذه الجلسة</b> <span class="meta">(صورة كشف الجلسة الممسوح ضوئياً — يمكن سحب الملفات وإفلاتها)</span>${attBtns('d:'+selDate)}<div id="dfiles" class="files"></div></div>`;
+}
+function prevOf(c,r){if(!r)return'';const i=c.list.indexOf(r);if(i<1)return'';const p=c.list[i-1];return`<span class="sub">سابقاً: ${esc(decText(p))} (${fmt(p.date)})</span>`}
+function shiftDate(dir){const ds=allDates(),n=dir>0?ds.filter(d=>d>selDate)[0]:ds.filter(d=>d<selDate).pop();if(n){selDate=n;render()}else toast('لا توجد جلسات '+(dir>0?'لاحقة':'سابقة'))}
+
+/* ----- القضايا ----- */
+function filtered(){
+  let cs=allCases();const q=nn(cf.q);
+  if(cf.tab==='active')cs=cs.filter(c=>c.st==='active');else if(cf.tab==='reserved')cs=cs.filter(c=>c.reserved);else if(cf.tab==='struck')cs=cs.filter(c=>c.st==='struck');
+  if(cf.circuit)cs=cs.filter(c=>c.circuit===cf.circuit);
+  if(q)cs=cs.filter(c=>nn(c.plaintiff).includes(q)||nn(c.defendant).includes(q)||nn(c.subject).includes(q)||(num(cf.q)&&num(c.no)===num(cf.q)));
+  if(cf.sort==='next')cs.sort((a,b)=>(a.last.next||'9999')<(b.last.next||'9999')?-1:1);
+  else if(cf.sort==='no')cs.sort((a,b)=>num(a.no)-num(b.no)||num(a.year)-num(b.year));
+  else cs.sort((a,b)=>a.last.date<b.last.date?1:-1);
+  return cs;
+}
+function stChip(c){
+  if(c.st==='archived')return'<span class="chip g">محفوظة</span>';if(c.st==='struck')return'<span class="chip r">مشطوبة</span>';
+  let s=c.reserved?'<span class="chip w">محجوزة</span>':'';if(c.meta.judgment)s+='<span class="chip b">صدر حكم</span>';
+  if(c.last.next&&c.last.next<today())s+='<span class="chip r">⚠️ جلسة مضت</span>';return s||'<span class="chip">متداولة</span>'}
+function vCases(){
+  const all=allCases(),cnt={active:all.filter(c=>c.st==='active').length,reserved:all.filter(c=>c.reserved).length,struck:all.filter(c=>c.st==='struck').length,all:all.length};
+  const cs=filtered(),circs=[...new Set([...db.circuits.map(c=>c.name),...all.map(c=>c.circuit).filter(Boolean)])];
+  const rows=cs.map((c,i)=>{const att=c.list.reduce((n,x)=>n+(fcount['r:'+x.id]||0),0);return`<tr class="row ${c.last.mark?'hl':''}" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b></td><td>${toAr(c.year)}</td><td>${esc(c.circuit)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${fmt(c.last.date)}</td><td>${esc(decText(c.last))}</td><td>${fmt(c.last.next)}</td><td>${stChip(c)}</td><td>${att?'📎'+toAr(att):''}</td></tr>`}).join('');
+  return`<div class="tabs">${[['active','المتداولة'],['reserved','المحجوزة'],['struck','المشطوبة'],['all','الكل']].map(([k,l])=>`<button class="${cf.tab===k?'on':''}" onclick="cf.tab='${k}';render()">${l}<b>${toAr(cnt[k])}</b></button>`).join('')}</div>
+  <div class="bar"><input id="cq" style="flex:2;min-width:180px" placeholder="بحث بالاسم أو رقم الدعوى أو الموضوع" value="${esc(cf.q)}" oninput="cf.q=this.value;const p=this.selectionStart;render();const e=$('cq');e.focus();e.setSelectionRange(p,p)"><select style="flex:1;min-width:130px" onchange="cf.circuit=this.value;render()"><option value="">كل الدوائر</option>${circs.map(c=>`<option ${cf.circuit===c?'selected':''}>${esc(c)}</option>`).join('')}</select><select style="flex:1;min-width:130px" onchange="cf.sort=this.value;render()"><option value="act" ${cf.sort==='act'?'selected':''}>الأحدث نشاطاً</option><option value="next" ${cf.sort==='next'?'selected':''}>أقرب جلسة قادمة</option><option value="no" ${cf.sort==='no'?'selected':''}>رقم الدعوى</option></select><button class="btn" onclick="addCase({date:today()})">➕ قضية جديدة</button><button class="btn sec" onclick="printCasesList()">🖨️ PDF</button><button class="btn sec" onclick="csvCases()">⬇️ Excel</button></div>
+  ${rows?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة</th><th>الدائرة</th><th>المدعي</th><th>المدعى عليه</th><th>آخر جلسة</th><th>آخر قرار</th><th>الجلسة القادمة</th><th>الحالة</th><th>📎</th></tr></thead><tbody>${rows}</tbody></table></div><p class="meta">${toAr(cs.length)} دعوى — اضغط أي صف لفتح ملف القضية وسجل جلساتها.</p>`:'<div class="empty">لا توجد قضايا مطابقة</div>'}`;
+}
+
+/* ----- إضافة / تسجيل جلسات ----- */
+const circNames=()=>[...new Set([...db.circuits.map(c=>c.name),...db.rows.map(r=>r.circuit).filter(Boolean)])];
+function addCase(d={}){
+  const defs=[...new Set(db.rows.map(r=>r.defendant).filter(Boolean))];
+  openForm('➕ إضافة دعوى إلى الجلسة',[
+    {id:'date',label:'تاريخ الجلسة',type:'date',value:d.date||today(),req:1},
+    {id:'circuit',label:'الدائرة',list:circNames(),value:d.circuit||''},
+    {id:'no',label:'رقم الدعوى',inputmode:'numeric',value:d.no||'',req:1},
+    {id:'year',label:'السنة القضائية',inputmode:'numeric',value:d.year||(JSON.parse(localStorage.getItem('lastYear')||'null')||'')},
+    {id:'plaintiff',label:'المدعي',value:d.plaintiff||'',req:1,full:1},
+    {id:'defendant',label:'المدعى عليه',list:defs,value:d.defendant||'',full:1},
+    {id:'decision',label:'نوع القرار',list:DECISIONS,value:d.decision||''},
+    {id:'next',label:'الجلسة القادمة',type:'date',value:d.next||''},
+    {id:'rollNo',label:'رقم الرول (اختياري)',inputmode:'numeric',value:d.rollNo||''},
+    {id:'subject',label:'موضوع الدعوى (اختياري)',value:d.subject||''},
+    {id:'note',label:'ملاحظة',type:'textarea',value:d.note||'',full:1},
+    {id:'mark',label:'تمييز الصف بالأصفر',type:'check'}
+  ],v=>{
+    const r={id:uid(),ts:Date.now(),date:v.date,no:toEn(v.no),year:toEn(v.year),plaintiff:v.plaintiff,defendant:v.defendant,circuit:v.circuit,decision:v.decision,next:v.next,rollNo:v.rollNo,subject:v.subject,note:v.note,mark:v.mark};
+    db.rows.push(r);save();selDate=v.date;if(v.year)try{localStorage.setItem('lastYear',JSON.stringify(v.year))}catch(e){}
+    toast('تم الحفظ ✔');render();
+  },{after(){
+    const chk=()=>{const no=num(fv('no')),yr=num(fv('year')),pl=nn(fv('plaintiff'));const h=$('fhint');if(!no||!pl){h.innerHTML='';return}
+      const c=allCases().find(c=>num(c.no)===no&&nn(c.plaintiff)===pl&&(!yr||num(c.year)===yr));if(!c){h.innerHTML='';return}
+      if(!fv('defendant'))$('ff_defendant').value=c.defendant||'';if(!fv('year'))$('ff_year').value=c.year||'';if(!fv('circuit'))$('ff_circuit').value=c.circuit||'';
+      h.innerHTML=`<div class="hint">🔗 <b>دعوى مقيدة سابقاً</b> (${toAr(c.list.length)} جلسة) — آخر قرار ${fmt(c.last.date)}: <b>${esc(decText(c.last))}</b></div>`};
+    ['no','year','plaintiff'].forEach(f=>$('ff_'+f).addEventListener('input',chk));chk()}});
+}
+function recordSession(k,d={}){
+  const c=caseBy(k);if(!c)return;
+  const date=d.date||(c.last.next&&c.last.next<=today()?c.last.next:c.last.next||today());
+  const ex=db.rows.find(r=>key(r)===k&&r.date===date);
+  openForm(d.title||'📝 تسجيل قرار الجلسة',[
+    {id:'date',label:'تاريخ الجلسة',type:'date',value:date,req:1},
+    {id:'decision',label:'نوع القرار',list:DECISIONS,value:d.decision??(ex?ex.decision:'تأجيل لجلسة'),req:1},
+    {id:'next',label:'الجلسة القادمة',type:'date',value:d.next??(ex?ex.next:''),req:d.needNext},
+    {id:'note',label:'ملاحظة',value:ex?ex.note:'',full:1}
+  ],v=>{
+    const e=db.rows.find(r=>key(r)===k&&r.date===v.date);
+    if(e){e.decision=v.decision;e.next=v.next;if(v.note)e.note=v.note}
+    else db.rows.push({id:uid(),ts:Date.now(),date:v.date,no:c.no,year:c.year,plaintiff:c.plaintiff,defendant:c.defendant,circuit:c.circuit,subject:c.subject,rollNo:c.rollNo,decision:v.decision,next:v.next,note:v.note});
+    save();toast('تم تسجيل القرار ✔');render();if(curCase)openCase(curCase);
+  },{ok:d.ok});
+}
+function editRowForm(id){
+  const r=db.rows.find(x=>x.id===id);if(!r)return;
+  openForm('✏️ تعديل الجلسة',[
+    {id:'date',label:'تاريخ الجلسة',type:'date',value:r.date,req:1},
+    {id:'decision',label:'نوع القرار',list:DECISIONS,value:r.decision},
+    {id:'next',label:'الجلسة القادمة',type:'date',value:r.next},
+    {id:'note',label:'ملاحظة',value:r.note,full:1},
+    {id:'mark',label:'تمييز بالأصفر',type:'check',value:r.mark}
+  ],v=>{const k0=key(r);Object.assign(r,{date:v.date,decision:v.decision,next:v.next,note:v.note,mark:v.mark});save();render();if(curCase)openCase(k0)});
+}
+async function delRow(id){
+  if(!confirm('حذف هذه الجلسة (وأي مرفقات مرتبطة بها)؟'))return;
+  const r=db.rows.find(x=>x.id===id),k=r&&key(r);
+  db.rows=db.rows.filter(x=>x.id!==id);
+  try{for(const f of await fByRefs(['r:'+id]))await fDel(f.id);await refreshCounts()}catch(e){}
+  if(k&&!db.rows.some(x=>key(x)===k)){delete db.meta[k];closeM1()}
+  save();render();if(curCase)openCase(curCase);toast('تم الحذف');
+}
+
+/* ----- ملف القضية ----- */
+function openCase(k){
+  const c=caseBy(k);if(!c){closeM1();return}
+  curCase=k;
+  const j=c.meta.judgment,left=appealLeft(c),late=c.last.next&&c.last.next<today();
+  const items=[...c.list].reverse().map((x,i)=>`<div class="it ${i===0?'last':''}"><b>${fmt(x.date)}</b> <span class="meta">${dayName(x.date)}</span> — ${esc(decText(x))}${x.note?`<div class="meta">${esc(x.note)}</div>`:''}<div class="acts"><button onclick="editRowForm('${x.id}')">تعديل</button><button onclick="delRow('${x.id}')" style="color:var(--bad)">حذف</button></div></div>`).join('');
+  const A=(l,f,cls='sec')=>`<button class="btn sm ${cls}" onclick="${f}">${l}</button>`;
+  const q=`KR[${ki(k)}]`;
+  const actions=c.st==='archived'?A('↩️ استرجاع من الأرشيف',`unarchive(${q})`,'ok'):[
+    A('🔁 ترحيل',`recordSession(${q},{title:'🔁 ترحيل القضية',decision:'تأجيل لجلسة',needNext:1,ok:'ترحيل'})`,''),
+    A('📌 حجز للتقرير',`recordSession(${q},{title:'📌 حجز للتقرير',decision:'حجز للتقرير',date:c.last.next&&c.last.next<=today()?c.last.next:today()})`),
+    A('📌 حجز للحكم',`recordSession(${q},{title:'📌 حجز للحكم',decision:'حجز للحكم',date:c.last.next&&c.last.next<=today()?c.last.next:today()})`),
+    c.reserved?A('↪️ إعادة للمرافعة',`recordSession(${q},{title:'↪️ إعادة للمرافعة',decision:'إعادة للمرافعة',date:today(),needNext:1})`):'',
+    A('⚖️ '+(j?'تعديل الحكم':'تسجيل حكم'),`judgmentForm(${q})`),
+    A('🗄️ حفظ القضية (أرشفة)',`archiveForm(${q})`),
+    c.st==='struck'?'':A('✂️ شطب',`recordSession(${q},{title:'✂️ شطب الدعوى',decision:'شطب',date:today()})`)
+  ].join('');
+  showM('m1',`<div class="mbox wide"><div class="bar"><h3 style="margin:0;flex:1">${esc(c.plaintiff)}</h3>${stChip(c)}<button class="btn sec sm" onclick="closeM1()">✕</button></div>
+  <div class="meta">دعوى رقم <b>${toAr(c.no)}</b> لسنة <b>${toAr(c.year)}</b> ق${c.circuit?' — دائرة '+esc(c.circuit):''}${c.rollNo?' — رول '+toAr(c.rollNo):''}<br>ضد: ${esc(c.defendant)}${c.subject?'<br>الموضوع: '+esc(c.subject):''}</div>
+  <div class="status ${late?'warn':''}" style="margin:10px 0"><b>إلى أين وصلت الدعوى؟</b><br>آخر قرار (${fmt(c.last.date)}): <b>${esc(decText(c.last))}</b>${late?'<br>⚠️ مرّت الجلسة المحددة ولم تُسجل نتيجتها':''}${j?`<br>⚖️ حكم ${esc(j.type)} ${esc(j.nature)} بتاريخ ${fmt(j.date)} — ميعاد الطعن حتى <b>${fmt(j.appealEnd)}</b> ${left!=null?(left>=0?'(متبقي '+toAr(left)+' يوم)':'(انتهى)'):''}`:''}${c.meta.archived?`<br>🗄️ محفوظة بتاريخ ${fmt(c.meta.archived.date)} — ${esc(c.meta.archived.reason)}`:''}</div>
+  <div class="bar">${actions}<span class="sp"></span>${A('✏️ تعديل البيانات',`editCaseData(${q})`)}${A('🖨️ تقرير القضية',`printCase(${q})`)}${A('📁 ملف القضية PDF',`printCaseFile(${q})`)}${A('📨 خطاب / استعجال',`letterForm(${q},-1)`)}${A('🗂️ حافظة مستندات',`docsFolder(${q})`)}${A('🗑️ حذف',`deleteCase(${q})`,'red')}</div>
+  <h4 style="margin:10px 0 0">سجل الجلسات (${toAr(c.list.length)})</h4><div class="tl">${items}</div>
+  <h4>📨 الخطابات والاستعجالات (${toAr((c.meta.letters||[]).length)})</h4>${letterList(c)}<h4>📎 المرفقات والمسح الضوئي</h4><div class="drop"><div class="meta">اسحب الملفات وأفلتها هنا أو استخدم الأزرار</div>${attBtns('r:'+c.last.id)}</div><div id="files" class="files"></div></div>`);
+  loadFiles(c.list.map(x=>'r:'+x.id),'files');
+}
+function editCaseData(k){
+  const c=caseBy(k);
+  openForm('✏️ تعديل بيانات القضية (تُطبَّق على كل جلساتها)',[
+    {id:'no',label:'رقم الدعوى',value:c.no,req:1},{id:'year',label:'السنة القضائية',value:c.year},
+    {id:'plaintiff',label:'المدعي',value:c.plaintiff,req:1,full:1},{id:'defendant',label:'المدعى عليه',value:c.defendant,full:1},
+    {id:'circuit',label:'الدائرة',list:circNames(),value:c.circuit},{id:'rollNo',label:'رقم الرول',value:c.rollNo},
+    {id:'subject',label:'موضوع الدعوى',value:c.subject,full:1}
+  ],v=>{
+    c.list.forEach(r=>Object.assign(r,{no:toEn(v.no),year:toEn(v.year),plaintiff:v.plaintiff,defendant:v.defendant,circuit:v.circuit,rollNo:v.rollNo,subject:v.subject}));
+    const nk=key(c.list[0]);if(nk!==k&&db.meta[k]){db.meta[nk]=db.meta[k];delete db.meta[k]}
+    save();render();openCase(nk);
+  });
+}
+async function deleteCase(k){
+  const c=caseBy(k);if(!c)return;
+  if(!(confirm('حذف القضية بكل جلساتها ومرفقاتها نهائياً؟')&&confirm('تأكيد أخير: لا يمكن التراجع')))return;
+  const ids=new Set(c.list.map(r=>r.id));
+  try{for(const id of ids)for(const f of await fByRefs(['r:'+id]))await fDel(f.id);await refreshCounts()}catch(e){}
+  db.rows=db.rows.filter(r=>!ids.has(r.id));delete db.meta[k];save();closeM1();render();toast('تم حذف القضية');
+}
+function judgmentForm(k){
+  const c=caseBy(k),j=c.meta.judgment||{};
+  const upd=()=>{const d=fv('date');if(d&&!$('ff_appealEnd').dataset.man)$('ff_appealEnd').value=addDays(d,+db.settings.appealDays||60)};
+  openForm('⚖️ تسجيل الحكم',[
+    {id:'date',label:'تاريخ صدور الحكم',type:'date',value:j.date||today(),req:1},
+    {id:'type',label:'نوع الحكم',type:'select',options:['نهائي','ابتدائي','تمهيدي','مبدئي'],value:j.type||'نهائي'},
+    {id:'nature',label:'طبيعة الحكم',list:['لصالح المدعي','ضد المدعي (رفض)','بعدم القبول','بعدم الاختصاص','بإلزام','بإلغاء القرار','باعتبار الدعوى كأن لم تكن','بانتهاء الخصومة'],value:j.nature||''},
+    {id:'appealEnd',label:'آخر ميعاد للطعن',type:'date',value:j.appealEnd||addDays(j.date||today(),+db.settings.appealDays||60)},
+    {id:'text',label:'منطوق الحكم / ملخصه',type:'textarea',value:j.text||'',full:1,},
+    {id:'del',label:'🗑️ إلغاء تسجيل الحكم',type:'check',full:1}
+  ],v=>{
+    if(v.del){delete c.meta.judgment}else{
+      db.meta[k]=Object.assign(c.meta,{judgment:{date:v.date,type:v.type,nature:v.nature,appealEnd:v.appealEnd,text:v.text}});
+      if(!db.rows.some(r=>key(r)===k&&r.date===v.date))db.rows.push({id:uid(),ts:Date.now(),date:v.date,no:c.no,year:c.year,plaintiff:c.plaintiff,defendant:c.defendant,circuit:c.circuit,subject:c.subject,rollNo:c.rollNo,decision:'صدر الحكم',next:''});
+    }
+    db.meta[k]=c.meta;save();render();openCase(k);
+  },{after(){$('ff_date').addEventListener('change',upd);$('ff_appealEnd').addEventListener('input',e=>e.target.dataset.man=1)}});
+}
+function archiveForm(k){
+  const c=caseBy(k);
+  openForm('🗄️ حفظ القضية في الأرشيف',[
+    {id:'date',label:'تاريخ الحفظ',type:'date',value:today(),req:1},
+    {id:'reason',label:'سبب الحفظ',list:['تم الحكم وانتهى الميعاد','تم الصلح','ترك الخصومة','انتهاء النزاع','أخرى'],value:'تم الحكم وانتهى الميعاد',req:1,full:1}
+  ],v=>{db.meta[k]=Object.assign(c.meta,{archived:{date:v.date,reason:v.reason}});save();closeM1();render();toast('تم حفظ القضية في الأرشيف')},{ok:'🗄️ حفظ في الأرشيف'});
+}
+function unarchive(k){const c=caseBy(k);delete c.meta.archived;db.meta[k]=c.meta;save();render();openCase(k);toast('تم استرجاع القضية')}
+
+/* ----- ترحيل مجمّع ----- */
+let bulk={date:'',circuit:'',sel:new Set()};
+function vBulk(){
+  if(!bulk.date)bulk.date=today();
+  const items=rollFor(bulk.date).filter(x=>!bulk.circuit||x.c.circuit===bulk.circuit),circs=circNames();
+  return`<div class="card"><h3>بحث الترحيل المجمّع</h3><div class="fg" style="grid-template-columns:1fr 1fr auto;align-items:end"><div><label class="l">تاريخ الجلسة</label><input type="date" value="${bulk.date}" onchange="bulk.date=this.value;bulk.sel=new Set();render()"></div><div><label class="l">الدائرة</label><select onchange="bulk.circuit=this.value;bulk.sel=new Set();render()"><option value="">كل الدوائر</option>${circs.map(c=>`<option ${bulk.circuit===c?'selected':''}>${esc(c)}</option>`).join('')}</select></div><span></span></div></div>
+  <div class="card"><h3>نتائج البحث (${toAr(items.length)})</h3>${items.length?`<div class="tw"><table><thead><tr><th><input type="checkbox" onchange="bulkAll(this.checked)"></th><th>رقم الدعوى</th><th>السنة</th><th>المدعي</th><th>المدعى عليه</th><th>الدائرة</th><th>القرار الحالي</th></tr></thead><tbody>${items.map(x=>`<tr><td><input type="checkbox" ${bulk.sel.has(x.c.key)?'checked':''} onchange="bulkTog(KR[${ki(x.c.key)}],this.checked)"></td><td><b>${toAr(x.c.no)}</b></td><td>${toAr(x.c.year)}</td><td class="l">${esc(x.c.plaintiff)}</td><td class="l">${esc(x.c.defendant)}</td><td>${esc(x.c.circuit)}</td><td>${x.pending?'<span class="chip w">لم يُسجل</span>':esc(decText(x.row))}</td></tr>`).join('')}</tbody></table></div>
+  <div class="fg" style="margin-top:12px;grid-template-columns:1fr 1fr auto;align-items:end"><div><label class="l">القرار المطبَّق على المحدد</label><input id="b_dec" list="dl_b" value="تأجيل لجلسة"><datalist id="dl_b">${DECISIONS.map(x=>`<option value="${x}">`).join('')}</datalist></div><div><label class="l">الجلسة القادمة</label><input id="b_next" type="date"></div><button class="btn" onclick="bulkApply()">🔁 تنفيذ الترحيل (${toAr(bulk.sel.size)})</button></div>`:'<div class="empty">لا توجد قضايا لهذا التاريخ والدائرة</div>'}</div>`;
+}
+function bulkTog(k,on){on?bulk.sel.add(k):bulk.sel.delete(k);render()}
+function bulkAll(on){bulk.sel=new Set(on?rollFor(bulk.date).filter(x=>!bulk.circuit||x.c.circuit===bulk.circuit).map(x=>x.c.key):[]);render()}
+function bulkApply(){
+  const dec=$('b_dec').value.trim(),nx=$('b_next').value;
+  if(!bulk.sel.size)return toast('حدد قضية واحدة على الأقل');if(!dec)return toast('اكتب نوع القرار');if(!nx&&!/شطب|حكم|حجز/.test(dec))return toast('حدد تاريخ الجلسة القادمة');
+  if(!confirm('تطبيق القرار على '+toAr(bulk.sel.size)+' دعوى؟'))return;
+  bulk.sel.forEach(k=>{const c=caseBy(k);if(!c)return;const e=db.rows.find(r=>key(r)===k&&r.date===bulk.date);
+    if(e){e.decision=dec;e.next=nx}else db.rows.push({id:uid(),ts:Date.now(),date:bulk.date,no:c.no,year:c.year,plaintiff:c.plaintiff,defendant:c.defendant,circuit:c.circuit,subject:c.subject,rollNo:c.rollNo,decision:dec,next:nx})});
+  const n=bulk.sel.size;bulk.sel=new Set();save();render();toast('تم ترحيل '+toAr(n)+' دعوى ✔');
+}
+
+/* ----- الأحكام والطعون ----- */
+function vJudg(){
+  const cs=allCases().filter(c=>c.meta.judgment).sort((a,b)=>(appealLeft(a)??9999)-(appealLeft(b)??9999));
+  const rows=cs.map((c,i)=>{const l=appealLeft(c),j=c.meta.judgment;return`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b></td><td>${toAr(c.year)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${fmt(j.date)}</td><td>${esc(j.type)}</td><td>${esc(j.nature)}</td><td>${fmt(j.appealEnd)}</td><td>${l==null?'—':l<0?'<span class="chip">انتهى</span>':`<span class="chip ${l<=15?'r':l<=30?'w':'g'}">${toAr(l)} يوم</span>`}</td></tr>`}).join('');
+  return`<div class="bar"><span class="meta">آخر ميعاد للطعن يُحسب تلقائياً بـ ${toAr(db.settings.appealDays)} يوماً من صدور الحكم (يمكن تغيير المدة من الإعدادات أو تعديل التاريخ لكل حكم).</span><span class="sp"></span><button class="btn sec" onclick="printJudg()">🖨️ PDF</button></div>${rows?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة</th><th>المدعي</th><th>المدعى عليه</th><th>تاريخ الحكم</th><th>النوع</th><th>الطبيعة</th><th>آخر ميعاد للطعن</th><th>المتبقي</th></tr></thead><tbody>${rows}</tbody></table></div>`:'<div class="empty">لا توجد أحكام مسجلة. افتح قضية واضغط «تسجيل حكم».</div>'}`;
+}
+
+/* ----- الشعبة ----- */
+function vShelf(){
+  const cs=allCases().filter(c=>c.reserved).sort((a,b)=>a.last.date<b.last.date?-1:1);
+  const rows=cs.map((c,i)=>`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b></td><td>${toAr(c.year)}</td><td>${esc(c.circuit)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${esc(c.last.decision)}</td><td>${fmt(c.last.date)}<span class="sub">منذ ${toAr(diffDays(c.last.date,today()))} يوم</span></td><td onclick="event.stopPropagation()"><button class="btn sm sec" onclick="recordSession(KR[${ki(c.key)}],{title:'↪️ إعادة للمرافعة',decision:'إعادة للمرافعة',date:today(),needNext:1})">إعادة للمرافعة</button> <button class="btn sm" onclick="judgmentForm(KR[${ki(c.key)}])">تسجيل حكم</button></td></tr>`).join('');
+  return`<div class="bar"><span class="meta">القضايا المحجوزة للتقرير أو للحكم. سجّل الحكم أو أعدها للمرافعة.</span><span class="sp"></span><button class="btn sec" onclick="printShelf()">🖨️ PDF</button></div>${rows?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة</th><th>الدائرة</th><th>المدعي</th><th>المدعى عليه</th><th>نوع الحجز</th><th>تاريخ الحجز</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`:'<div class="empty">لا توجد قضايا محجوزة</div>'}`;
+}
+
+/* ----- الأرشيف ----- */
+let aq='';
+function vArchive(){
+  let cs=allCases().filter(c=>c.st==='archived');const q=nn(aq);
+  if(q)cs=cs.filter(c=>nn(c.plaintiff).includes(q)||nn(c.defendant).includes(q)||(num(aq)&&num(c.no)===num(aq)));
+  cs.sort((a,b)=>a.meta.archived.date<b.meta.archived.date?1:-1);
+  const rows=cs.map((c,i)=>{const j=c.meta.judgment;return`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b></td><td>${toAr(c.year)}</td><td>${esc(c.circuit)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${fmt(c.last.date)}</td><td>${fmt(c.meta.archived.date)}</td><td class="l">${esc(j?(j.type+' '+j.nature+(j.text?' — '+j.text:'')):c.meta.archived.reason)}</td></tr>`}).join('');
+  return`<div class="bar"><input id="aqq" style="flex:1;min-width:200px" placeholder="بحث في الأرشيف بالاسم أو رقم الدعوى" value="${esc(aq)}" oninput="aq=this.value;const p=this.selectionStart;render();const e=$('aqq');e.focus();e.setSelectionRange(p,p)"><button class="btn sec" onclick="printArchive()">🖨️ PDF</button><button class="btn sec" onclick="csvArchive()">⬇️ Excel</button></div>${rows?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة</th><th>الدائرة</th><th>المدعي</th><th>المدعى عليه</th><th>آخر جلسة</th><th>تاريخ الحفظ</th><th>ملخص الحكم / السبب</th></tr></thead><tbody>${rows}</tbody></table></div>`:'<div class="empty">الأرشيف فارغ</div>'}`;
+}
+
+/* ----- الدوائر ----- */
+function vCirc(){
+  const rows=db.circuits.map((c,i)=>`<tr><td>${toAr(i+1)}</td><td class="l"><b>${esc(c.name)}</b></td><td>${toAr(c.no)}</td><td>${esc(c.day)}</td><td>${esc(c.shift)}</td><td><button class="btn sm sec" onclick="circForm(${i})">تعديل</button> <button class="btn sm red" onclick="circDel(${i})">حذف</button></td></tr>`).join('');
+  return`<div class="bar"><button class="btn" onclick="circForm(-1)">➕ إضافة دائرة جديدة</button><span class="meta">تُستخدم الدوائر عند قيد القضايا وفي الرول والترحيل المجمّع.</span></div>${rows?`<div class="tw"><table><thead><tr><th>م</th><th>اسم الدائرة</th><th>رقمها</th><th>يوم الانعقاد</th><th>موعد الانعقاد</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`:'<div class="empty">لا توجد دوائر مسجلة بعد</div>'}`;
+}
+function circForm(i){
+  const c=i>=0?db.circuits[i]:{};
+  openForm(i>=0?'✏️ تعديل دائرة':'➕ إضافة دائرة',[
+    {id:'name',label:'اسم الدائرة',value:c.name||'',req:1,full:1},{id:'no',label:'رقم الدائرة',value:c.no||''},
+    {id:'day',label:'يوم الانعقاد',type:'select',options:DN,value:c.day||'الأحد'},{id:'shift',label:'موعد الانعقاد',type:'select',options:['صباحي','مسائي'],value:c.shift||'صباحي'}
+  ],v=>{const o={name:v.name,no:v.no,day:v.day,shift:v.shift};if(i>=0){const old=db.circuits[i].name;db.circuits[i]=o;if(old!==v.name)db.rows.forEach(r=>{if(r.circuit===old)r.circuit=v.name})}else db.circuits.push(o);save();render()});
+}
+function circDel(i){if(confirm('حذف هذه الدائرة؟ (القضايا المسجلة عليها تحتفظ باسمها)')){db.circuits.splice(i,1);save();render()}}
+
+/* =============== الخدمات القانونية =============== */
+let lt='dead';
+const ONES=['','واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة','أحد عشر','اثنا عشر','ثلاثة عشر','أربعة عشر','خمسة عشر','ستة عشر','سبعة عشر','ثمانية عشر','تسعة عشر'];
+const TENS=['','','عشرون','ثلاثون','أربعون','خمسون','ستون','سبعون','ثمانون','تسعون'];
+const HUND=['','مائة','مائتان','ثلاثمائة','أربعمائة','خمسمائة','ستمائة','سبعمائة','ثمانمائة','تسعمائة'];
+function w999(n){const h=Math.floor(n/100),r=n%100,p=[];if(h)p.push(HUND[h]);if(r){if(r<20)p.push(ONES[r]);else{const t=Math.floor(r/10),u=r%10;p.push(u?ONES[u]+' و'+TENS[t]:TENS[t])}}return p.join(' و')}
+function scaleWord(n,f,last){ // f:[مفرد,مثنى,جمع(3-10),تمييز(11-99)]
+  if(n===1)return f[0];if(n===2)return f[1];const l=n%100;
+  const w=l===0||l===1||l===2?f[0]:l<=10?f[2]:(last?f[0]:f[3]);return w999(n)+' '+w}
+function numWords(n){
+  if(n===0)return'صفر';
+  const g=[[Math.floor(n/1e9),['مليار','ملياران','مليارات','ملياراً']],[Math.floor(n%1e9/1e6),['مليون','مليونان','ملايين','مليوناً']],[Math.floor(n%1e6/1e3),['ألف','ألفان','آلاف','ألفاً']],[n%1e3,null]].filter(x=>x[0]);
+  return g.map((x,i)=>x[1]?scaleWord(x[0],x[1],i===g.length-1):w999(x[0])).join(' و');
+}
+const CUR={egp:[['جنيه','جنيهان','جنيهات','جنيهاً'],['قرش','قرشان','قروش','قرشاً'],['مصري','مصريان','مصرية','مصرياً']],sar:[['ريال','ريالان','ريالات','ريالاً'],['هللة','هللتان','هللات','هللة'],['سعودي','سعوديان','سعودية','سعودياً']],usd:[['دولار','دولاران','دولارات','دولاراً'],['سنت','سنتان','سنتات','سنتاً'],['أمريكي','أمريكيان','أمريكية','أمريكياً']],aed:[['درهم','درهمان','دراهم','درهماً'],['فلس','فلسان','فلوس','فلساً'],['إماراتي','إماراتيان','إماراتية','إماراتياً']]};
+function amountWords(amount,cur){
+  const [U,S,A]=CUR[cur];const a=Math.round(amount*100)/100,whole=Math.floor(a+1e-9),sub=Math.round((a-whole)*100);
+  const idx=n=>{const l=n%100;return l===0||l===1||l===2?0:l<=10?2:3};
+  const part=(n,f,adj)=>{
+    if(n===1)return f[0]+' واحد'+(adj?' '+adj[0]:'');
+    if(n===2)return f[1]+(adj?' '+adj[1]:'');
+    const i=idx(n);let w=numWords(n);if(i===0&&/(ألفان|مليونان|ملياران)$/.test(w))w=w.slice(0,-2)+'ا';return w+' '+f[i]+(adj?' '+adj[i]:'')};
+  const out=[];
+  if(whole>0||sub===0)out.push(whole===0?'صفر '+U[0]+' '+A[0]:part(whole,U,A));
+  if(sub)out.push(part(sub,S,null));
+  return out.join(' و')+' فقط لا غير';
+}
+function vLegal(){
+  const T=[['dead','📆 حاسبة المواعيد'],['int','💰 حاسبة الفوائد'],['words','🔤 المبلغ بالحروف'],['contract','📝 نماذج العقود'],['clean','🧹 تنظيف النصوص'],['lib','📚 مكتبتي القانونية'],['courts','🏢 دليل المحاكم والمحضرين']];
+  return`<div class="tabs">${T.map(([k,l])=>`<button class="${lt===k?'on':''}" onclick="lt='${k}';render()">${l}</button>`).join('')}</div><div class="card" id="lg">${({dead:legDead,int:legInt,words:legWords,contract:legContract,clean:legClean,lib:legLib,courts:legCourts})[lt]()}</div><p class="meta">⚠️ هذه الأدوات مساعدة حسابية فقط، وراجع النص القانوني الواجب التطبيق قبل الاعتماد على أي ميعاد.</p>`;
+}
+function legalInit(){if(lt==='dead')calcDead();else if(lt==='int')calcInt();else if(lt==='words')calcWords();else if(lt==='contract')ctFields()}
+function legDead(){return`<h3>حاسبة المواعيد القانونية</h3><div class="fg"><div><label class="l">تاريخ بداية الميعاد (مثلاً: صدور الحكم أو الإعلان)</label><input id="d_s" type="date" value="${today()}" oninput="calcDead()"></div><div><label class="l">مدة الميعاد</label><div style="display:flex;gap:6px"><input id="d_n" type="number" min="1" value="${db.settings.appealDays}" oninput="calcDead()"><select id="d_u" style="width:110px" onchange="calcDead()"><option value="d">يوم</option><option value="m">شهر</option><option value="y">سنة</option></select></div></div>
+  <label class="f2" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="d_ex" checked onchange="calcDead()"> لا يُحسب يوم البداية</label><label class="f2" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="d_hol" checked onchange="calcDead()"> إذا صادف آخر الميعاد عطلة (الجمعة/السبت أو من قائمة الأعياد في الإعدادات) يُمدّ لأول يوم عمل</label></div><div class="bar" style="margin-top:8px">${[15,30,40,60,90].map(n=>`<button class="btn sm sec" onclick="$('d_n').value=${n};$('d_u').value='d';calcDead()">${toAr(n)} يوماً</button>`).join('')}</div><div class="res" id="d_res"></div>`}
+function calcDead(){
+  const s=$('d_s').value,n=+$('d_n').value,u=$('d_u').value,r=$('d_res');if(!s||!n){r.innerHTML='';return}
+  let e=u==='d'?addDays(s,$('d_ex').checked?n:n-1):u==='m'?addMonths(s,n):addMonths(s,n*12);
+  if(u!=='d'&&!$('d_ex').checked)e=addDays(e,-1);
+  const hol=new Set((db.settings.holidays||'').split(/[\s,،;]+/).map(x=>toEn(x).trim()).filter(Boolean));let ext=[];
+  if($('d_hol').checked){let g=0;while((D(e).getUTCDay()===5||D(e).getUTCDay()===6||hol.has(e))&&g++<40){ext.push(dayName(e)+' '+fmt(e));e=addDays(e,1)}}
+  r.innerHTML=`آخر يوم في الميعاد: <b class="big">${dayName(e)} ${fmt(e)}</b>${ext.length?`<br><span class="meta">صادف عطلة (${ext.map(esc).join('، ')}) فمُدّ إلى أول يوم عمل.</span>`:''}<br><span class="meta">المتبقي من اليوم: ${(()=>{const l=diffDays(today(),e);return l>=0?toAr(l)+' يوم':'انتهى منذ '+toAr(-l)+' يوم'})()}</span>`;
+}
+function legInt(){return`<h3>حاسبة الفوائد البسيطة</h3><div class="fg"><div><label class="l">أصل المبلغ</label><input id="i_p" type="number" min="0" step="0.01" value="100000" oninput="calcInt()"></div><div><label class="l">سعر الفائدة السنوي %</label><div style="display:flex;gap:6px"><input id="i_r" type="number" step="0.01" value="4" oninput="calcInt()"><button class="btn sm sec" onclick="$('i_r').value=4;calcInt()">٤٪ مدنية</button><button class="btn sm sec" onclick="$('i_r').value=5;calcInt()">٥٪ تجارية</button></div></div><div><label class="l">من تاريخ</label><input id="i_a" type="date" value="${addDays(today(),-365)}" oninput="calcInt()"></div><div><label class="l">إلى تاريخ</label><input id="i_b" type="date" value="${today()}" oninput="calcInt()"></div></div><div class="res" id="i_res"></div>`}
+function calcInt(){
+  const p=+$('i_p').value,rt=+$('i_r').value,a=$('i_a').value,b=$('i_b').value,r=$('i_res');if(!a||!b||b<a){r.innerHTML='<span class="meta">أدخل فترة صحيحة</span>';return}
+  const days=diffDays(a,b),it=p*rt/100*days/365,f=x=>toAr(x.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}));
+  r.innerHTML=`عدد الأيام: <b>${toAr(days)}</b> — الفائدة: <b class="big">${f(it)}</b><br>الإجمالي (الأصل + الفائدة): <b>${f(p+it)}</b><br><span class="meta">المعادلة: الأصل × السعر ÷ ١٠٠ × الأيام ÷ ٣٦٥</span>`;
+}
+function legWords(){return`<h3>تحويل المبلغ إلى حروف عربية</h3><div class="fg"><div><label class="l">المبلغ بالأرقام</label><input id="w_n" inputmode="decimal" value="1250.50" oninput="calcWords()"></div><div><label class="l">العملة</label><select id="w_c" onchange="calcWords()"><option value="egp">جنيه مصري</option><option value="sar">ريال سعودي</option><option value="usd">دولار أمريكي</option><option value="aed">درهم إماراتي</option></select></div></div><div class="res" id="w_res"></div><div class="bar" style="margin-top:8px"><button class="btn sm" onclick="navigator.clipboard&&navigator.clipboard.writeText($('w_txt').textContent).then(()=>toast('تم النسخ'))">📋 نسخ النص</button></div>`}
+function calcWords(){
+  const v=parseFloat(toEn($('w_n').value).replace(/,/g,''));const r=$('w_res');
+  if(!isFinite(v)||v<0||v>=1e12){r.innerHTML='<span class="meta">أدخل مبلغاً صحيحاً (حتى ١٢ رقماً)</span>';return}
+  r.innerHTML=`<span id="w_txt" style="font-size:18px;font-weight:700">${esc(amountWords(v,$('w_c').value))}</span>`;
+}
+
+
+/* =============== الاستعلام الشامل =============== */
+let inq={no:'',year:'',pl:'',df:'',circuit:'',st:'',dec:'',from:'',to:'',subj:''};
+function inqRun(){
+  const q=inq;let cs=allCases();
+  if(q.no)cs=cs.filter(c=>num(c.no)===num(q.no));if(q.year)cs=cs.filter(c=>num(c.year)===num(q.year));
+  if(q.pl)cs=cs.filter(c=>nn(c.plaintiff).includes(nn(q.pl)));if(q.df)cs=cs.filter(c=>nn(c.defendant).includes(nn(q.df)));
+  if(q.subj)cs=cs.filter(c=>nn(c.subject).includes(nn(q.subj)));if(q.circuit)cs=cs.filter(c=>c.circuit===q.circuit);
+  if(q.st==='active')cs=cs.filter(c=>c.st==='active');else if(q.st==='reserved')cs=cs.filter(c=>c.reserved);else if(q.st==='struck')cs=cs.filter(c=>c.st==='struck');else if(q.st==='archived')cs=cs.filter(c=>c.st==='archived');else if(q.st==='judg')cs=cs.filter(c=>c.meta.judgment);
+  if(q.dec)cs=cs.filter(c=>c.list.some(r=>nn(r.decision).includes(nn(q.dec))));
+  if(q.from||q.to)cs=cs.filter(c=>c.list.some(r=>(!q.from||r.date>=q.from)&&(!q.to||r.date<=q.to)));
+  return cs;
+}
+function inqTable(cs){
+  return cs.length?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الدعوى</th><th>السنة</th><th>الدائرة</th><th>المدعي</th><th>المدعى عليه</th><th>عدد الجلسات</th><th>آخر قرار</th><th>الجلسة القادمة</th><th>الحالة</th></tr></thead><tbody>${cs.map((c,i)=>`<tr class="row" onclick="openCase(KR[${ki(c.key)}])"><td>${toAr(i+1)}</td><td><b>${toAr(c.no)}</b></td><td>${toAr(c.year)}</td><td>${esc(c.circuit)}</td><td class="l">${esc(c.plaintiff)}</td><td class="l">${esc(c.defendant)}</td><td>${toAr(c.list.length)}</td><td>${esc(decText(c.last))}</td><td>${fmt(c.last.next)}</td><td>${stChip(c)}</td></tr>`).join('')}</tbody></table></div><p class="meta">${toAr(cs.length)} نتيجة</p>`:'<div class="empty">لا توجد نتائج مطابقة</div>';
+}
+function inqSet(k,v){inq[k]=v;const cs=inqRun();KR=[];$('inqres').innerHTML=inqTable(cs)}
+function vInq(){
+  const I=(k,l,ph)=>`<div><label class="l">${l}</label><input value="${esc(inq[k])}" placeholder="${ph||''}" oninput="inqSet('${k}',this.value)"></div>`;
+  const cs=inqRun();
+  return`<div class="card"><h3>🔎 الاستعلام الشامل عن قضية</h3><div class="fg" style="grid-template-columns:repeat(auto-fill,minmax(190px,1fr))">${I('no','رقم الدعوى')}${I('year','السنة القضائية')}${I('pl','المدعي')}${I('df','المدعى عليه')}${I('subj','الموضوع')}
+  <div><label class="l">الدائرة</label><select onchange="inqSet('circuit',this.value)"><option value="">الكل</option>${circNames().map(c=>`<option ${inq.circuit===c?'selected':''}>${esc(c)}</option>`).join('')}</select></div>
+  <div><label class="l">الحالة</label><select onchange="inqSet('st',this.value)">${[['','الكل'],['active','متداولة'],['reserved','محجوزة'],['struck','مشطوبة'],['archived','محفوظة'],['judg','صدر فيها حكم']].map(([v,l])=>`<option value="${v}" ${inq.st===v?'selected':''}>${l}</option>`).join('')}</select></div>
+  ${I('dec','نوع القرار (في أي جلسة)')}<div><label class="l">جلسة من تاريخ</label><input type="date" value="${inq.from}" oninput="inqSet('from',this.value)"></div><div><label class="l">إلى تاريخ</label><input type="date" value="${inq.to}" oninput="inqSet('to',this.value)"></div></div>
+  <div class="bar" style="margin:12px 0 0"><button class="btn sec" onclick="inq={no:'',year:'',pl:'',df:'',circuit:'',st:'',dec:'',from:'',to:'',subj:''};render()">↺ مسح الشروط</button><button class="btn sec" onclick="inqPrint()">🖨️ PDF</button><button class="btn sec" onclick="inqCsv()">⬇️ Excel</button></div></div><div id="inqres">${inqTable(cs)}</div>`;
+}
+function inqPrint(){const cs=inqRun();if(!cs.length)return toast('لا توجد نتائج');const r=listRows(cs);printHTML('نتائج الاستعلام',`<h2>نتائج الاستعلام الشامل</h2><div class="sd">${toAr(cs.length)} دعوى</div>${tbl(r.head,r.rows)}`,true)}
+function inqCsv(){const cs=inqRun();if(!cs.length)return toast('لا توجد نتائج');const r=listRows(cs);csv('inquiry-'+today(),r.head,r.rows)}
+
+/* =============== قضايا تحت الرفع =============== */
+const PSTAT=['قيد الإعداد','جاهز للرفع','تم الرفع'];
+function vPend(){
+  const rows=db.pend.map((x,i)=>`<tr><td>${toAr(i+1)}</td><td><b>${toAr(x.no)}</b></td><td>${toAr(x.year)}</td><td class="l">${esc(x.plaintiff)}</td><td class="l">${esc(x.defendant)}</td><td>${fmt(x.recv)}</td><td>${fmt(x.due)}${x.due&&x.status!=='تم الرفع'&&x.due<today()?' ⚠️':''}</td><td class="l">${esc(x.opinion)}</td><td><span class="chip ${x.status==='تم الرفع'?'g':x.status==='جاهز للرفع'?'b':'w'}">${esc(x.status)}</span></td><td style="white-space:nowrap"><button class="btn sm" onclick="pendToCase('${x.id}')">قيّد كدعوى</button> <button class="btn sm sec" onclick="pendForm('${x.id}')">✎</button> <button class="btn sm red" onclick="pendDel('${x.id}')">🗑</button></td></tr>`).join('');
+  return`<div class="bar"><button class="btn" onclick="pendForm('')">➕ إضافة ملف تحت الرفع</button><span class="meta">ملفات استلمتها لإعداد الرأي أو الرفع ولم تُقيَّد كدعاوى بعد.</span><span class="sp"></span><button class="btn sec" onclick="pendPrint()">🖨️ PDF</button></div>${rows?`<div class="tw"><table><thead><tr><th>م</th><th>رقم الملف</th><th>السنة</th><th>المدعي</th><th>المدعى عليه</th><th>تاريخ الاستلام</th><th>آخر موعد للرفع</th><th>الرأي القانوني / ملاحظات</th><th>الحالة</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>`:'<div class="empty">لا توجد ملفات تحت الرفع</div>'}`;
+}
+function pendForm(id){
+  const x=db.pend.find(y=>y.id===id)||{};
+  openForm(id?'✏️ تعديل ملف تحت الرفع':'➕ ملف تحت الرفع',[
+    {id:'no',label:'رقم الملف / الدعوى',value:x.no||'',req:1},{id:'year',label:'السنة',value:x.year||''},
+    {id:'plaintiff',label:'المدعي',value:x.plaintiff||'',req:1,full:1},{id:'defendant',label:'المدعى عليه',value:x.defendant||'',full:1},
+    {id:'recv',label:'تاريخ الاستلام',type:'date',value:x.recv||today()},{id:'due',label:'آخر موعد للرفع',type:'date',value:x.due||''},
+    {id:'status',label:'الحالة',type:'select',options:PSTAT,value:x.status||PSTAT[0],full:1},
+    {id:'opinion',label:'الرأي القانوني / ملاحظات',type:'textarea',value:x.opinion||'',full:1}
+  ],v=>{if(x.id)Object.assign(x,v);else db.pend.push(Object.assign({id:uid()},v));save();render()});
+}
+function pendDel(id){if(confirm('حذف هذا الملف؟')){db.pend=db.pend.filter(x=>x.id!==id);save();render()}}
+function pendToCase(id){const x=db.pend.find(y=>y.id===id);if(!x)return;addCase({date:today(),no:x.no,year:x.year,plaintiff:x.plaintiff,defendant:x.defendant,note:x.opinion});toast('أكمل بيانات القيد ثم احفظ')}
+function pendPrint(){if(!db.pend.length)return toast('لا توجد ملفات');printHTML('قضايا تحت الرفع',`<h2>قضايا تحت الرفع</h2>${tbl(['م','رقم الملف','السنة','المدعي','المدعى عليه','تاريخ الاستلام','آخر موعد للرفع','الحالة','الرأي / ملاحظات'],db.pend.map((x,i)=>[toAr(i+1),toAr(x.no),toAr(x.year),x.plaintiff,x.defendant,fmt(x.recv),fmt(x.due),x.status,x.opinion]))}`,true)}
+
+/* =============== الخطابات والاستعجالات وحافظة المستندات =============== */
+const LTYPES=['خطاب','استعجال','إنذار','مذكرة','طلب'];
+function letterList(c){
+  const L=c.meta.letters||[];if(!L.length)return'<div class="meta">لا توجد خطابات مسجلة</div>';
+  return`<div class="tw"><table><thead><tr><th>التاريخ</th><th>النوع</th><th>الجهة</th><th>الموضوع</th><th>الحالة</th><th></th></tr></thead><tbody>${L.map((l,i)=>`<tr><td>${fmt(l.date)}</td><td>${esc(l.type)}</td><td class="l">${esc(l.to)}</td><td class="l">${esc(l.subject)}</td><td><span class="chip ${l.status==='تم الرد'?'g':'w'}">${esc(l.status)}</span></td><td style="white-space:nowrap"><button class="btn sm sec" onclick="printLetter(KR[${ki(c.key)}],${i})">🖨️</button> <button class="btn sm sec" onclick="letterForm(KR[${ki(c.key)}],${i})">✎</button> <button class="btn sm red" onclick="letterDel(KR[${ki(c.key)}],${i})">🗑</button></td></tr>`).join('')}</tbody></table></div>`;
+}
+function letterForm(k,i){
+  const c=caseBy(k),l=(c.meta.letters||[])[i]||{};
+  openForm(i>=0?'✏️ تعديل الخطاب':'📨 خطاب / استعجال جديد',[
+    {id:'date',label:'التاريخ',type:'date',value:l.date||today(),req:1},{id:'type',label:'النوع',type:'select',options:LTYPES,value:l.type||'خطاب'},
+    {id:'to',label:'الجهة الموجّه إليها',value:l.to||c.defendant||'',req:1,full:1},{id:'subject',label:'الموضوع',value:l.subject||'',req:1,full:1},
+    {id:'text',label:'نص الخطاب',type:'textarea',value:l.text||'',full:1},
+    {id:'status',label:'الحالة',type:'select',options:['لم يُرد','تم الرد'],value:l.status||'لم يُرد'},{id:'reply',label:'ملاحظة الرد',value:l.reply||''}
+  ],v=>{c.meta.letters=c.meta.letters||[];if(i>=0)c.meta.letters[i]=v;else c.meta.letters.push(v);db.meta[k]=c.meta;save();render();openCase(k)});
+}
+function letterDel(k,i){if(!confirm('حذف الخطاب؟'))return;const c=caseBy(k);c.meta.letters.splice(i,1);db.meta[k]=c.meta;save();openCase(k)}
+function printLetter(k,i){
+  const c=caseBy(k),l=c.meta.letters[i];
+  printHTML(l.type+' — '+l.subject,`<div style="margin:18px 6px;line-height:2.1;font-size:15px"><div style="text-align:left">التاريخ: ${fmt(l.date)}</div><p><b>السيد / ${esc(l.to)}</b><br>تحية طيبة وبعد،،</p><p><b>الموضوع: ${esc(l.subject)}</b><br>بخصوص الدعوى رقم ${toAr(c.no)} لسنة ${toAr(c.year)} ق${c.circuit?' — دائرة '+esc(c.circuit):''}<br>المقامة من: ${esc(c.plaintiff)} ضد: ${esc(c.defendant)}</p><p style="white-space:pre-wrap">${esc(l.text)}</p><p>وتفضلوا بقبول فائق الاحترام والتقدير،،،</p><p style="text-align:left;margin-top:40px"><b>${esc(db.settings.office||BRAND)}</b></p></div>`,false);
+}
+function docsFolder(k){
+  const c=caseBy(k);
+  openForm('🗂️ حافظة مستندات',[
+    {id:'date',label:'التاريخ',type:'date',value:today()},{id:'to',label:'مقدَّمة إلى (دائرة/جلسة)',value:c.circuit?'دائرة '+c.circuit:''},
+    {id:'docs',label:'المستندات (كل مستند في سطر)',type:'textarea',value:'',full:1,req:1}
+  ],v=>{
+    const items=v.docs.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+    printHTML('حافظة مستندات',`<h2>حافظة مستندات</h2><div class="sd">دعوى رقم ${toAr(c.no)} لسنة ${toAr(c.year)} ق</div><div class="kv"><span>المقدمة من</span><span>${esc(db.settings.office||BRAND)}</span><span>المدعي</span><span>${esc(c.plaintiff)}</span><span>المدعى عليه</span><span>${esc(c.defendant)}</span><span>إلى</span><span>${esc(v.to)}</span><span>التاريخ</span><span>${fmt(v.date)}</span></div>${tbl(['م','بيان المستند','عدد الصفحات'],items.map((x,i)=>[toAr(i+1),x,'']))}`,false);
+  },{ok:'🖨️ طباعة الحافظة'});
+}
+
+/* =============== مكتبتي القانونية + دليل المحاكم =============== */
+let libq='',courtq='',courtGov='';
+function legLib(){
+  let L=db.lib;const q=nn(libq);if(q)L=L.filter(x=>nn(x.title+' '+x.text+' '+x.source+' '+x.tags).includes(q));
+  return`<h3>📚 مكتبتي القانونية</h3><p class="meta">احفظ هنا السوابق والمواد والأحكام التي تستند إليها (النص ومصدره) لتبحث فيها وتنسخها وتطبعها. المحتوى من إدخالك أنت.</p><div class="bar"><input style="flex:1;min-width:200px" id="lq" placeholder="بحث في المكتبة" value="${esc(libq)}" oninput="libq=this.value;const p=this.selectionStart;render();const e=$('lq');e.focus();e.setSelectionRange(p,p)"><button class="btn" onclick="libForm('')">➕ إضافة مادة / سند</button></div>${L.length?L.map(x=>`<div class="card" style="border:1px solid var(--line);box-shadow:none"><div class="bar" style="margin-bottom:6px"><b style="flex:1">${esc(x.title)}</b><button class="btn sm sec" onclick="libCopy('${x.id}')">📋 نسخ</button><button class="btn sm sec" onclick="libPrint('${x.id}')">🖨️</button><button class="btn sm sec" onclick="libForm('${x.id}')">✎</button><button class="btn sm red" onclick="libDel('${x.id}')">🗑</button></div><div class="meta">${esc(x.source)} ${x.tags?'— '+esc(x.tags):''}</div><div style="white-space:pre-wrap;margin-top:6px;line-height:1.9">${esc(x.text)}</div></div>`).join(''):'<div class="empty">المكتبة فارغة</div>'}`;
+}
+function libForm(id){
+  const x=db.lib.find(y=>y.id===id)||{};
+  openForm(id?'✏️ تعديل':'➕ إضافة مادة / سند',[{id:'title',label:'العنوان',value:x.title||'',req:1,full:1},{id:'source',label:'المصدر (قانون / حكم / رقم الطعن)',value:x.source||''},{id:'tags',label:'كلمات مفتاحية',value:x.tags||''},{id:'text',label:'النص',type:'textarea',value:x.text||'',full:1,req:1}],v=>{if(x.id)Object.assign(x,v);else db.lib.push(Object.assign({id:uid()},v));save();render()});
+}
+function libDel(id){if(confirm('حذف؟')){db.lib=db.lib.filter(x=>x.id!==id);save();render()}}
+function libCopy(id){const x=db.lib.find(y=>y.id===id);navigator.clipboard&&navigator.clipboard.writeText(x.title+'\n'+x.source+'\n\n'+x.text).then(()=>toast('تم النسخ'))}
+function libPrint(id){const x=db.lib.find(y=>y.id===id);printHTML(x.title,`<h2>${esc(x.title)}</h2><div class="sd">${esc(x.source)}</div><p style="white-space:pre-wrap;line-height:2;font-size:14px">${esc(x.text)}</p>`,false)}
+const GOVS=['القاهرة','الجيزة','الإسكندرية','القليوبية','البحر الأحمر','الأقصر','أسوان','أسيوط','الدقهلية','الشرقية','الغربية','المنوفية','البحيرة','كفر الشيخ','دمياط','بورسعيد','الإسماعيلية','السويس','الفيوم','بني سويف','المنيا','سوهاج','قنا','الوادي الجديد','مطروح','شمال سيناء','جنوب سيناء'];
+function legCourts(){
+  let L=db.courts;const q=nn(courtq);if(courtGov)L=L.filter(x=>x.gov===courtGov);if(q)L=L.filter(x=>nn(x.name+' '+x.address+' '+x.notes).includes(q));
+  return`<h3>🏢 دليل المحاكم والمحضرين</h3><p class="meta">دليلك الخاص: أضف المحاكم وأقلام المحضرين والجهات (العنوان والهاتف) لتجدها بسرعة. المحتوى من إدخالك.</p><div class="bar"><input style="flex:1;min-width:180px" id="cq2" placeholder="بحث" value="${esc(courtq)}" oninput="courtq=this.value;const p=this.selectionStart;render();const e=$('cq2');e.focus();e.setSelectionRange(p,p)"><select style="width:170px" onchange="courtGov=this.value;render()"><option value="">كل المحافظات</option>${GOVS.map(g=>`<option ${courtGov===g?'selected':''}>${g}</option>`).join('')}</select><button class="btn" onclick="courtForm('')">➕ إضافة</button></div>${L.length?`<div class="tw"><table><thead><tr><th>الجهة</th><th>النوع</th><th>المحافظة</th><th>العنوان</th><th>الهاتف</th><th>ملاحظات</th><th></th></tr></thead><tbody>${L.map(x=>`<tr><td class="l"><b>${esc(x.name)}</b></td><td>${esc(x.type)}</td><td>${esc(x.gov)}</td><td class="l">${esc(x.address)}</td><td>${esc(x.phone)}</td><td class="l">${esc(x.notes)}</td><td style="white-space:nowrap"><button class="btn sm sec" onclick="courtForm('${x.id}')">✎</button> <button class="btn sm red" onclick="courtDel('${x.id}')">🗑</button></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">لا توجد جهات مسجلة</div>'}`;
+}
+function courtForm(id){
+  const x=db.courts.find(y=>y.id===id)||{};
+  openForm(id?'✏️ تعديل':'➕ إضافة جهة',[{id:'name',label:'اسم الجهة',value:x.name||'',req:1,full:1},{id:'type',label:'النوع',type:'select',options:['محكمة ابتدائية','محكمة جزئية','محكمة استئناف','محكمة القضاء الإداري','المحكمة الإدارية','قلم محضرين','نيابة','هيئة قضايا الدولة','أخرى'],value:x.type||'قلم محضرين'},{id:'gov',label:'المحافظة',type:'select',options:GOVS,value:x.gov||'القاهرة'},{id:'address',label:'العنوان',value:x.address||'',full:1},{id:'phone',label:'الهاتف',value:x.phone||''},{id:'notes',label:'ملاحظات',value:x.notes||''}],v=>{if(x.id)Object.assign(x,v);else db.courts.push(Object.assign({id:uid()},v));save();render()});
+}
+function courtDel(id){if(confirm('حذف؟')){db.courts=db.courts.filter(x=>x.id!==id);save();render()}}
+
+/* =============== نماذج العقود (استرشادية) =============== */
+const CT={
+ rent:{name:'عقد إيجار',f:[['d','تاريخ العقد','date'],['p1','المؤجر (الاسم)'],['n1','رقمه القومي'],['a1','عنوانه'],['p2','المستأجر (الاسم)'],['n2','رقمه القومي'],['a2','عنوانه'],['unit','وصف العين المؤجرة وعنوانها'],['use','الغرض من الإيجار'],['from','بداية المدة','date'],['months','مدة الإيجار (شهور)','number'],['rent','القيمة الإيجارية الشهرية','number'],['dep','مبلغ التأمين','number']],
+  gen:v=>`عقد إيجار\n\nإنه في يوم ${dayName(v.d)} الموافق ${fmt(v.d)} تحرر هذا العقد بين كل من:\n\nأولاً: السيد / ${v.p1} — رقم قومي ${toAr(v.n1)} — ومقيم ${v.a1} (طرف أول — مؤجر).\nثانياً: السيد / ${v.p2} — رقم قومي ${toAr(v.n2)} — ومقيم ${v.a2} (طرف ثانٍ — مستأجر).\n\nبعد أن أقر الطرفان بأهليتهما للتعاقد اتفقا على الآتي:\n\nالبند الأول: أجّر الطرف الأول للطرف الثاني الذي قبل ذلك ${v.unit}، وذلك للغرض الآتي: ${v.use}.\nالبند الثاني: مدة هذا العقد ${toAr(v.months)} شهراً تبدأ من ${fmt(v.from)}${v.from&&+v.months?' وتنتهي في '+fmt(addDays(addMonths(v.from,+v.months),-1)):''}.\nالبند الثالث: القيمة الإيجارية الشهرية ${toAr(v.rent)} (${v.rent?amountWords(+v.rent,'egp').replace(' فقط لا غير',''):''}) تُسدد مقدماً في أول كل شهر.\nالبند الرابع: دفع الطرف الثاني مبلغ ${toAr(v.dep||0)} جنيهاً تأميناً يُرد عند انتهاء العقد وتسليم العين بحالتها بعد خصم ما يستحق من التزامات.\nالبند الخامس: يلتزم الطرف الثاني بالمحافظة على العين واستعمالها فيما أُجرت له، ولا يجوز له التنازل عن الإيجار أو التأجير من الباطن إلا بموافقة كتابية من المؤجر.\nالبند السادس: يلتزم الطرف الثاني بسداد استهلاك المرافق خلال مدة العقد.\nالبند السابع: عند انتهاء المدة يلتزم الطرف الثاني بتسليم العين خالية من الشواغل.\nالبند الثامن: تختص المحكمة المختصة بنظر أي نزاع ينشأ عن هذا العقد.\nالبند التاسع: حُرر هذا العقد من نسختين بيد كل طرف نسخة للعمل بموجبها.\n\nالطرف الأول (المؤجر)                                الطرف الثاني (المستأجر)`},
+ sale:{name:'عقد بيع',f:[['d','تاريخ العقد','date'],['p1','البائع (الاسم)'],['n1','رقمه القومي'],['a1','عنوانه'],['p2','المشتري (الاسم)'],['n2','رقمه القومي'],['a2','عنوانه'],['item','وصف المبيع'],['price','الثمن الإجمالي','number'],['paid','المدفوع مقدماً','number'],['hand','موعد التسليم','date']],
+  gen:v=>`عقد بيع\n\nإنه في يوم ${dayName(v.d)} الموافق ${fmt(v.d)} تحرر هذا العقد بين كل من:\n\nأولاً: السيد / ${v.p1} — رقم قومي ${toAr(v.n1)} — ومقيم ${v.a1} (طرف أول — بائع).\nثانياً: السيد / ${v.p2} — رقم قومي ${toAr(v.n2)} — ومقيم ${v.a2} (طرف ثانٍ — مشتري).\n\nبعد أن أقر الطرفان بأهليتهما للتعاقد اتفقا على الآتي:\n\nالبند الأول: باع الطرف الأول للطرف الثاني الذي قبل ذلك: ${v.item}.\nالبند الثاني: اتفق الطرفان على أن الثمن الإجمالي ${toAr(v.price)} (${v.price?amountWords(+v.price,'egp').replace(' فقط لا غير',''):''}).\nالبند الثالث: دفع الطرف الثاني مبلغ ${toAr(v.paid||0)} جنيهاً مقدماً، ويُسدد الباقي وقدره ${toAr(Math.max(0,(+v.price||0)-(+v.paid||0)))} جنيهاً عند التسليم.\nالبند الرابع: يلتزم الطرف الأول بتسليم المبيع في ${fmt(v.hand)} خالياً من أي حقوق للغير.\nالبند الخامس: يقر الطرف الأول بملكيته للمبيع ملكية تامة وبأنه غير متصرف فيه لغيره ولا مرهون ولا محجوز عليه.\nالبند السادس: تختص المحكمة المختصة بنظر أي نزاع ينشأ عن هذا العقد.\nالبند السابع: حُرر هذا العقد من نسختين بيد كل طرف نسخة للعمل بموجبها.\n\nالطرف الأول (البائع)                                الطرف الثاني (المشتري)`},
+ work:{name:'عقد مقاولة',f:[['d','تاريخ العقد','date'],['p1','صاحب العمل (الاسم)'],['a1','عنوانه'],['p2','المقاول (الاسم)'],['a2','عنوانه'],['job','وصف الأعمال المتفق عليها'],['price','المقابل الإجمالي','number'],['days','مدة التنفيذ (أيام)','number'],['pen','غرامة التأخير عن كل يوم','number']],
+  gen:v=>`عقد مقاولة\n\nإنه في يوم ${dayName(v.d)} الموافق ${fmt(v.d)} تحرر هذا العقد بين كل من:\n\nأولاً: السيد / ${v.p1} — ومقيم ${v.a1} (طرف أول — صاحب العمل).\nثانياً: السيد / ${v.p2} — ومقيم ${v.a2} (طرف ثانٍ — المقاول).\n\nاتفق الطرفان بعد أن أقرا بأهليتهما على الآتي:\n\nالبند الأول: كلّف الطرف الأول الطرف الثاني الذي قبل ذلك بتنفيذ الأعمال الآتية: ${v.job}.\nالبند الثاني: المقابل الإجمالي للأعمال ${toAr(v.price)} (${v.price?amountWords(+v.price,'egp').replace(' فقط لا غير',''):''}) يُسدد وفق ما يتفق عليه الطرفان.\nالبند الثالث: مدة التنفيذ ${toAr(v.days)} يوماً من تاريخ استلام الموقع.\nالبند الرابع: في حال التأخير يلتزم الطرف الثاني بغرامة قدرها ${toAr(v.pen||0)} جنيهاً عن كل يوم تأخير.\nالبند الخامس: يلتزم الطرف الثاني بتنفيذ الأعمال وفق الأصول الفنية، ويضمن جودتها.\nالبند السادس: تختص المحكمة المختصة بنظر أي نزاع ينشأ عن هذا العقد.\nالبند السابع: حُرر هذا العقد من نسختين بيد كل طرف نسخة للعمل بموجبها.\n\nالطرف الأول                                          الطرف الثاني`}
+};
+let ctType='rent';
+function legContract(){return`<h3>📝 نماذج العقود</h3><p class="meta">نماذج استرشادية تُملأ بياناتها وتُصدَّر نصاً قابلاً للتعديل. <b>راجعها وعدّلها قانونياً قبل الاستخدام.</b></p><div class="tabs">${Object.entries(CT).map(([k,v])=>`<button class="${ctType===k?'on':''}" onclick="ctType='${k}';render()">${v.name}</button>`).join('')}</div><div class="fg" id="ctf"></div><div class="bar" style="margin:12px 0 0"><button class="btn" onclick="ctGen()">✨ إنشاء العقد</button></div><textarea id="cto" style="min-height:300px;margin-top:10px;line-height:1.9;display:none"></textarea><div class="bar" id="ctb" style="display:none;margin-top:8px"><button class="btn sec" onclick="navigator.clipboard&&navigator.clipboard.writeText($('cto').value).then(()=>toast('تم النسخ'))">📋 نسخ</button><button class="btn sec" onclick="ctPrint()">🖨️ طباعة / PDF</button></div>`}
+function ctFields(){const t=CT[ctType],b=$('ctf');if(!b)return;b.innerHTML=t.f.map(([id,l,ty])=>`<div><label class="l">${l}</label><input id="ct_${id}" type="${ty||'text'}" ${ty==='date'?`value="${today()}"`:''}></div>`).join('')}
+function ctGen(){const t=CT[ctType],v={};t.f.forEach(([id])=>v[id]=$('ct_'+id).value.trim());$('cto').value=t.gen(v);$('cto').style.display='block';$('ctb').style.display='flex'}
+function ctPrint(){printHTML(CT[ctType].name,`<div style="white-space:pre-wrap;line-height:2.1;font-size:14px">${esc($('cto').value)}</div>`,false)}
+
+/* =============== تنظيف النصوص =============== */
+function legClean(){return`<h3>🧹 تنظيف وتنسيق النصوص</h3><p class="meta">الصق نصاً منسوخاً (من PDF أو واتساب أو Word) ليُنظَّف محلياً دون إنترنت.</p><textarea id="cl_in" style="min-height:160px" placeholder="الصق النص هنا"></textarea><div class="bar" style="margin-top:8px">${[['tash','حذف التشكيل'],['sp','توحيد المسافات والأسطر'],['pun','ضبط مسافات علامات الترقيم'],['tat','حذف التطويل (ـ)']].map(([k,l])=>`<label style="display:flex;gap:5px;align-items:center"><input type="checkbox" id="cl_${k}" checked> ${l}</label>`).join('')}<select id="cl_num" style="width:170px"><option value="">الأرقام كما هي</option><option value="ar">أرقام هندية (٠١٢)</option><option value="en">أرقام إنجليزية (012)</option></select><button class="btn" onclick="doClean()">🧹 نظّف</button></div><textarea id="cl_out" style="min-height:160px;margin-top:8px" readonly></textarea><div class="bar" style="margin-top:8px"><button class="btn sec" onclick="navigator.clipboard&&navigator.clipboard.writeText($('cl_out').value).then(()=>toast('تم النسخ'))">📋 نسخ النتيجة</button></div>`}
+function doClean(){
+  let t=$('cl_in').value;
+  if($('cl_tash').checked)t=t.replace(/[ً-ٰٟ]/g,'');
+  if($('cl_tat').checked)t=t.replace(/ـ/g,'');
+  if($('cl_sp').checked)t=t.replace(/[ \t ]+/g,' ').replace(/ *\n */g,'\n').replace(/\n{3,}/g,'\n\n').trim();
+  if($('cl_pun').checked)t=t.replace(/\s+([،؛؟.,:;!])/g,'$1').replace(/([،؛؟:;!])(?=[^\s\d])/g,'$1 ');
+  const n=$('cl_num').value;if(n==='ar')t=toAr(t);else if(n==='en')t=toEn(t);
+  $('cl_out').value=t;
+}
+
+/* =============== نسخ تلقائية محلية =============== */
+function takeSnap(){
+  try{if(!db.rows.length)return;let L=JSON.parse(localStorage.getItem('agenda_snaps')||'[]');const t=today();if(L.length&&L[0].d===t)return;
+    L.unshift({d:t,json:JSON.stringify(db)});L=L.slice(0,5);
+    while(L.length&&JSON.stringify(L).length>3.5e6)L.pop();
+    localStorage.setItem('agenda_snaps',JSON.stringify(L))}catch(e){}
+}
+function snapList(){
+  let L=[];try{L=JSON.parse(localStorage.getItem('agenda_snaps')||'[]')}catch(e){}
+  return L.length?`<div class="bar">${L.map((x,i)=>`<button class="btn sec sm" onclick="snapRestore(${i})">↩️ استرجاع نسخة ${fmt(x.d)}</button>`).join('')}</div>`:'<div class="meta">لا توجد نسخ تلقائية بعد (تُنشأ عند أول استخدام كل يوم).</div>';
+}
+function snapRestore(i){try{const L=JSON.parse(localStorage.getItem('agenda_snaps')||'[]');if(!confirm('استبدال البيانات الحالية بنسخة '+L[i].d+'؟ (المرفقات لا تتأثر)'))return;db=norm(JSON.parse(L[i].json));save();selDate='';render();toast('تم الاسترجاع')}catch(e){toast('تعذر الاسترجاع')}}
+
+/* =============== الإعدادات والنسخ =============== */
+function vSet(){
+  const s=db.settings,cs=allCases();
+  return`<div class="two"><div class="card"><h3>⚙️ الإعدادات</h3><div class="fg"><div class="f2"><label class="l">اسم المكتب / الجهة (يظهر في ترويسة التقارير)</label><input id="s_off" placeholder="${BRAND}" value="${esc(s.office)}"></div><div><label class="l">مدة الطعن الافتراضية (أيام)</label><input id="s_ap" type="number" min="1" value="${esc(s.appealDays)}"></div><div><label class="l">المظهر</label><select id="s_th"><option value="light" ${s.theme!=='dark'?'selected':''}>نهاري</option><option value="dark" ${s.theme==='dark'?'selected':''}>ليلي</option></select></div><label class="f2" style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="s_wel" ${s.welcome!==false?'checked':''}> إظهار رسالة الترحيب (الصلاة على النبي ﷺ) عند فتح البرنامج</label><div class="f2"><label class="l">الأعياد والإجازات الرسمية (تواريخ بصيغة 2026-12-25 مفصولة بفواصل — تُستخدم في حاسبة المواعيد)</label><textarea id="s_hol">${esc(s.holidays)}</textarea></div></div><div class="bar" style="margin:12px 0 0"><button class="btn" onclick="saveSettings()">💾 حفظ الإعدادات</button></div></div>
+  <div class="card"><h3>💾 النسخ الاحتياطي ونقل البيانات</h3><p class="meta">البيانات والمرفقات محفوظة داخل متصفح هذا الجهاز فقط. لنقلها بين الهاتف والكمبيوتر: صدّر نسخة كاملة من أحدهما واستوردها في الآخر.${s.lastBackup?'<br>آخر نسخة: '+fmt(s.lastBackup):''}</p><div class="bar"><button class="btn" onclick="exportData(true)">⬇️ نسخة كاملة (مع المرفقات)</button><button class="btn sec" onclick="exportData(false)">⬇️ البيانات فقط</button><label class="btn sec">⬆️ استيراد نسخة<input type="file" accept=".json,application/json" hidden onchange="importData(this.files[0]);this.value=''"></label></div><p class="meta">📊 القيود: ${toAr(db.rows.length)} — القضايا: ${toAr(cs.length)} — الدوائر: ${toAr(db.circuits.length)} — المرفقات: ${toAr(Object.values(fcount).reduce((a,b)=>a+b,0))}</p></div></div>
+  <div class="card"><h3>🕘 نسخ تلقائية على هذا الجهاز</h3><p class="meta">يحتفظ البرنامج تلقائياً بآخر ٥ نسخ (نسخة لكل يوم استخدام) للبيانات النصية. للمرفقات استخدم النسخة الكاملة.</p>${snapList()}</div><div class="card"><h3>كيف يتم ربط الجلسات؟</h3><p class="meta">تُعتبر الدعوى واحدة إذا تطابق <b>رقم الدعوى</b> و<b>السنة القضائية</b> و<b>اسم المدعي</b> (مع تجاهل الفروق في الهمزات والتاء المربوطة والأرقام العربية/الإنجليزية). عند التطابق يظهر سجل الجلسات والقرارات وآخر ما وصلت إليه، وتظهر الدعوى المؤجلة تلقائياً في رول يوم الجلسة القادمة.</p></div>
+  <div class="card"><button class="btn red" onclick="wipe()">🗑️ حذف كل البيانات</button></div>`;
+}
+function saveSettings(){db.settings.office=$('s_off').value.trim();db.settings.appealDays=Math.max(1,+$('s_ap').value||60);db.settings.theme=$('s_th').value;db.settings.holidays=$('s_hol').value.trim();db.settings.welcome=$('s_wel').checked;save();render();toast('تم حفظ الإعدادات ✔')}
+async function wipe(){
+  if(!(confirm('حذف كل البيانات والمرفقات نهائياً؟')&&confirm('تأكيد أخير: لا يمكن التراجع')))return;
+  const th=db.settings;db=norm({settings:th});save();selDate='';try{for(const f of await fAll())await fDel(f.id)}catch(e){}fcount={};fmap={};render();toast('تم الحذف');
+}
+const b2d=b=>new Promise(res=>{const r=new FileReader();r.onload=()=>res(r.result);r.readAsDataURL(b)});
+async function exportData(withFiles){
+  try{const out={v:3,db,files:[]};
+    if(withFiles)for(const f of await fAll())out.files.push({id:f.id,ref:f.ref,name:f.name,type:f.type,ts:f.ts,data:await b2d(f.blob)});
+    dl(new Blob([JSON.stringify(out)],{type:'application/json'}),'agenda-backup-'+(withFiles?'full-':'')+today()+'.json');
+    db.settings.lastBackup=today();save();render();
+  }catch(e){toast('تعذر التصدير')}
+}
+function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000)}
+function importData(f){
+  if(!f)return;const fr=new FileReader();
+  fr.onload=async()=>{try{
+    const d=JSON.parse(fr.result),src=d.db||d;if(!Array.isArray(src.rows))throw 0;
+    const ids=new Set(db.rows.map(r=>r.id));let n=0;src.rows.forEach(r=>{if(!ids.has(r.id)){db.rows.push(r);n++}});
+    (src.circuits||[]).forEach(c=>{if(!db.circuits.some(x=>x.name===c.name))db.circuits.push(c)});['pend','lib','courts'].forEach(a=>(src[a]||[]).forEach(x=>{if(!db[a].some(y=>y.id===x.id))db[a].push(x)}));
+    Object.entries(src.meta||{}).forEach(([k,v])=>{if(!db.meta[k])db.meta[k]=v});
+    save();let nf=0;
+    if(Array.isArray(d.files)){for(const x of d.files){try{const blob=await(await fetch(x.data)).blob();await fPut({id:x.id,ref:x.ref,name:x.name,type:x.type,size:blob.size,ts:x.ts,blob});nf++}catch(e){}}await refreshCounts()}
+    selDate='';render();toast('تم استيراد '+toAr(n)+' قيد'+(nf?' و'+toAr(nf)+' مرفق':''));
+  }catch(e){toast('ملف غير صالح')}};
+  fr.readAsText(f);
+}
+
+/* =============== التقارير: PDF (طباعة) و Excel (CSV) =============== */
+function printHTML(title,inner,landscape){
+  let st=$('pgstyle');if(!st){st=document.createElement('style');st.id='pgstyle';document.head.appendChild(st)}
+  st.textContent=`@page{size:A4 ${landscape?'landscape':'portrait'};margin:12mm}`;
+  $('printArea').innerHTML=`<div class="ph"><b>${esc(db.settings.office||BRAND)}</b><span>${dayName(today())} ${fmt(today())}</span></div>${inner}<div class="pf">${esc(db.settings.office||BRAND)} — الأجندة القضائية — طُبع بتاريخ ${fmt(today())}</div>`;
+  document.title=title;document.body.classList.add('printing');
+  const done=()=>{document.body.classList.remove('printing');document.title='الأجندة القضائية';removeEventListener('afterprint',done)};
+  addEventListener('afterprint',done);setTimeout(()=>window.print(),80);
+}
+const tbl=(head,rows,hl)=>`<table><thead><tr>${head.map(h=>`<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map((r,i)=>`<tr class="${hl&&hl[i]?'hl':''}">${r.map(c=>`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+function rollRows(d){const it=rollFor(d);return{head:['م','رقم الدعوى','السنة القضائية','المدعي','المدعى عليه','الدائرة','نوع القرار','الجلسة القادمة'],rows:it.map((x,i)=>[toAr(i+1),toAr(x.c.no),toAr(x.c.year),x.c.plaintiff,x.c.defendant,x.c.circuit,x.pending?'':decText(x.row),x.row?fmt(x.row.next):'']),hl:it.map(x=>x.row&&x.row.mark)}}
+function printRoll(d){const r=rollRows(d);if(!r.rows.length)return toast('لا توجد دعاوى في هذه الجلسة');printHTML('رول جلسة '+d,`<h2>جلسة</h2><div class="sd">${dayName(d)} ${fmt(d)}</div>${tbl(r.head,r.rows,r.hl)}`,true)}
+function csvRoll(d){const r=rollRows(d);if(!r.rows.length)return toast('لا توجد بيانات');csv('roll-'+d,r.head,r.rows)}
+function csv(name,head,rows){const q=x=>'"'+String(x??'').replace(/"/g,'""')+'"';dl(new Blob(['﻿'+[head,...rows].map(r=>r.map(q).join(',')).join('\r\n')],{type:'text/csv;charset=utf-8'}),name+'.csv')}
+function listRows(cs){return{head:['م','رقم الدعوى','السنة','الدائرة','المدعي','المدعى عليه','آخر جلسة','آخر قرار','الجلسة القادمة','الحالة'],rows:cs.map((c,i)=>[toAr(i+1),toAr(c.no),toAr(c.year),c.circuit,c.plaintiff,c.defendant,fmt(c.last.date),decText(c.last),fmt(c.last.next),c.st==='archived'?'محفوظة':c.st==='struck'?'مشطوبة':c.reserved?'محجوزة':'متداولة'])}}
+function printCasesList(){const cs=filtered();if(!cs.length)return toast('لا توجد قضايا');const r=listRows(cs);printHTML('قائمة القضايا',`<h2>قائمة القضايا</h2><div class="sd">${toAr(cs.length)} دعوى</div>${tbl(r.head,r.rows)}`,true)}
+function csvCases(){const cs=filtered();if(!cs.length)return toast('لا توجد قضايا');const r=listRows(cs);csv('cases-'+today(),r.head,r.rows)}
+function printArchive(){const cs=allCases().filter(c=>c.st==='archived');if(!cs.length)return toast('الأرشيف فارغ');printHTML('الأرشيف',`<h2>أرشيف القضايا المحفوظة</h2>${tbl(['م','رقم الدعوى','السنة','المدعي','المدعى عليه','تاريخ الحفظ','ملخص الحكم / السبب'],cs.map((c,i)=>[toAr(i+1),toAr(c.no),toAr(c.year),c.plaintiff,c.defendant,fmt(c.meta.archived.date),c.meta.judgment?c.meta.judgment.type+' '+c.meta.judgment.nature+' '+(c.meta.judgment.text||''):c.meta.archived.reason]))}`,true)}
+function csvArchive(){const cs=allCases().filter(c=>c.st==='archived');if(!cs.length)return toast('الأرشيف فارغ');const r=listRows(cs);csv('archive-'+today(),r.head,r.rows)}
+function printJudg(){const cs=allCases().filter(c=>c.meta.judgment);if(!cs.length)return toast('لا توجد أحكام');printHTML('الأحكام والطعون',`<h2>الأحكام وميعاد الطعن</h2>${tbl(['م','رقم الدعوى','السنة','المدعي','المدعى عليه','تاريخ الحكم','النوع','الطبيعة','آخر ميعاد للطعن','المتبقي'],cs.map((c,i)=>{const j=c.meta.judgment,l=appealLeft(c);return[toAr(i+1),toAr(c.no),toAr(c.year),c.plaintiff,c.defendant,fmt(j.date),j.type,j.nature,fmt(j.appealEnd),l==null?'':l<0?'انتهى':toAr(l)+' يوم']}))}`,true)}
+function printShelf(){const cs=allCases().filter(c=>c.reserved);if(!cs.length)return toast('لا توجد قضايا محجوزة');printHTML('القضايا المحجوزة',`<h2>القضايا المحجوزة</h2>${tbl(['م','رقم الدعوى','السنة','الدائرة','المدعي','المدعى عليه','نوع الحجز','تاريخ الحجز'],cs.map((c,i)=>[toAr(i+1),toAr(c.no),toAr(c.year),c.circuit,c.plaintiff,c.defendant,c.last.decision,fmt(c.last.date)]))}`,true)}
+function caseReportHTML(c){
+  const j=c.meta.judgment,kv=(a,b)=>b?`<span>${a}</span><span>${esc(b)}</span>`:'';
+  return`<h2>تقرير القضية</h2><div class="sd">دعوى رقم ${toAr(c.no)} لسنة ${toAr(c.year)} ق</div>
+  <div class="kv">${kv('المدعي',c.plaintiff)}${kv('المدعى عليه',c.defendant)}${kv('الدائرة',c.circuit)}${kv('رقم الرول',toAr(c.rollNo))}${kv('الموضوع',c.subject)}${kv('الحالة',c.st==='archived'?'محفوظة بتاريخ '+fmt(c.meta.archived.date):c.st==='struck'?'مشطوبة':c.reserved?'محجوزة ('+c.last.decision+')':'متداولة')}${kv('آخر قرار',decText(c.last)+' ('+fmt(c.last.date)+')')}</div>
+  ${j?`<h4>الحكم</h4><div class="kv">${kv('تاريخ الحكم',fmt(j.date))}${kv('نوع الحكم',j.type)}${kv('طبيعة الحكم',j.nature)}${kv('آخر ميعاد للطعن',fmt(j.appealEnd))}${kv('المنطوق',j.text)}</div>`:''}
+  <h4>سجل الجلسات</h4>${tbl(['م','تاريخ الجلسة','اليوم','القرار','الجلسة القادمة','ملاحظات'],c.list.map((r,i)=>[toAr(i+1),fmt(r.date),dayName(r.date),r.decision||'—',fmt(r.next),r.note||'']))}`;
+}
+function printCase(k){const c=caseBy(k);printHTML('تقرير القضية '+c.no+'-'+c.year,caseReportHTML(c),false)}
+async function printCaseFile(k){
+  const c=caseBy(k);let imgs='';
+  try{const fs=await fByRefs(c.list.map(x=>'r:'+x.id));const names=[];
+    for(const f of fs){if(/^image\//.test(f.type))imgs+=`<div class="pb"><h4>${esc(f.name)}</h4><img class="att" src="${await b2d(f.blob)}"></div>`;else names.push(f.name)}
+    if(names.length)imgs+=`<h4>ملفات PDF مرفقة (لا تُدمج في هذا الملف)</h4><p>${names.map(esc).join('، ')}</p>`}catch(e){}
+  printHTML('ملف القضية '+c.no+'-'+c.year,caseReportHTML(c)+imgs,false);
+}
+
+/* =============== رسالة الترحيب =============== */
+let salN=0;
+function salawat(){salN++;$('wcnt').textContent='صلّيتَ على النبي ﷺ '+toAr(salN)+(salN===1?' مرة':salN===2?' مرتين':' مرات')+' — جزاك الله خيراً'}
+function closeWelcome(){$('welcome').style.display='none'}
+addEventListener('keydown',e=>{if(e.key==='Escape'&&$('welcome').style.display==='flex')closeWelcome()});
+
+/* =============== بدء التشغيل =============== */
+takeSnap();
+render();
+if(db.settings.welcome!==false){$('welcome').style.display='flex'}
+refreshCounts().then(()=>{if(tab==='cases'||tab==='home')render()});
+</script>
+</body>
+</html>
