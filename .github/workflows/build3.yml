@@ -1,31 +1,475 @@
-name: Build APK 2
+name: Build APK
+
+# ضع هذا الملف في المستودع بالمسار:  .github/workflows/build-apk.yml
+# ثم سيبني GitHub التطبيق تلقائياً (3-6 دقائق) ويعطيك ملف LanShareCam.apk
+
 on:
-  workflow_dispatch:
   push:
-    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Unzip project
-        run: unzip -q JudicialAgenda-Android-Project*.zip -d proj
-      - uses: actions/setup-java@v4
+      - name: Java 17
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - name: Accept Android licenses and install SDK parts
+
+      - name: Prepare Android SDK (preinstalled on runner)
         run: |
-          SDKM="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
-          yes | "$SDKM" --licenses > /dev/null || true
-          "$SDKM" "platforms;android-34" "build-tools;34.0.0" > /dev/null
-      - uses: gradle/actions/setup-gradle@v4
+          export ANDROID_HOME="${ANDROID_HOME:-/usr/local/lib/android/sdk}"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> "$GITHUB_ENV"
+          ls "$ANDROID_HOME/platforms" "$ANDROID_HOME/build-tools" || true
+          # قبول التراخيص وتثبيت الحزم لو ناقصة (لا يوقف البناء لو فشل)
+          set +e
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null 2>&1
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-34" "build-tools;34.0.0" > /dev/null 2>&1
+          exit 0
+
+      - name: Gradle
+        uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.7'
-      - name: Build debug APK
-        working-directory: proj
-        run: gradle assembleDebug --no-daemon
-      - uses: actions/upload-artifact@v4
+          gradle-version: '8.9'
+
+      - name: Generate Android project
+        run: |
+          cat > settings.gradle <<'__END_0__'
+          pluginManagement {
+              repositories {
+                  google()
+                  mavenCentral()
+                  gradlePluginPortal()
+              }
+          }
+          dependencyResolutionManagement {
+              repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+              repositories {
+                  google()
+                  mavenCentral()
+              }
+          }
+          rootProject.name = "LanShareCam"
+          include ':app'
+          __END_0__
+          cat > build.gradle <<'__END_1__'
+          plugins {
+              id 'com.android.application' version '8.5.2' apply false
+          }
+          __END_1__
+          cat > gradle.properties <<'__END_2__'
+          org.gradle.jvmargs=-Xmx2g -Dfile.encoding=UTF-8
+          android.nonTransitiveRClass=true
+          __END_2__
+          mkdir -p app
+          cat > app/build.gradle <<'__END_3__'
+          plugins {
+              id 'com.android.application'
+          }
+
+          android {
+              namespace 'com.lanshare.cam'
+              compileSdk 34
+
+              defaultConfig {
+                  applicationId 'com.lanshare.cam'
+                  minSdk 29
+                  targetSdk 34
+                  versionCode 1
+                  versionName '1.0'
+              }
+
+              compileOptions {
+                  sourceCompatibility JavaVersion.VERSION_1_8
+                  targetCompatibility JavaVersion.VERSION_1_8
+              }
+          }
+
+          tasks.withType(JavaCompile).configureEach {
+              options.encoding = 'UTF-8'
+          }
+          __END_3__
+          mkdir -p app/src/main
+          cat > app/src/main/AndroidManifest.xml <<'__END_4__'
+          <?xml version="1.0" encoding="utf-8"?>
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+              <uses-permission android:name="android.permission.INTERNET" />
+
+              <application
+                  android:label="@string/app_name"
+                  android:icon="@drawable/ic_launcher"
+                  android:usesCleartextTraffic="true"
+                  android:theme="@android:style/Theme.DeviceDefault.Light">
+
+                  <activity
+                      android:name=".MainActivity"
+                      android:exported="true"
+                      android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout">
+                      <intent-filter>
+                          <action android:name="android.intent.action.MAIN" />
+                          <category android:name="android.intent.category.LAUNCHER" />
+                      </intent-filter>
+                  </activity>
+              </application>
+          </manifest>
+          __END_4__
+          mkdir -p app/src/main/res/values
+          cat > app/src/main/res/values/strings.xml <<'__END_5__'
+          <?xml version="1.0" encoding="utf-8"?>
+          <resources>
+              <string name="app_name">كاميرا الكمبيوتر</string>
+          </resources>
+          __END_5__
+          mkdir -p app/src/main/res/drawable
+          cat > app/src/main/res/drawable/ic_launcher.xml <<'__END_6__'
+          <?xml version="1.0" encoding="utf-8"?>
+          <vector xmlns:android="http://schemas.android.com/apk/res/android"
+              android:width="108dp"
+              android:height="108dp"
+              android:viewportWidth="108"
+              android:viewportHeight="108">
+              <path
+                  android:fillColor="#2F6FED"
+                  android:pathData="M0,0h108v108h-108z" />
+              <path
+                  android:fillColor="#FFFFFF"
+                  android:pathData="M30,40h12l4,-6h16l4,6h12a4,4 0 0 1 4,4v34a4,4 0 0 1 -4,4h-48a4,4 0 0 1 -4,-4v-34a4,4 0 0 1 4,-4z" />
+              <path
+                  android:fillColor="#2F6FED"
+                  android:pathData="M40,61a14,14 0 1,0 28,0a14,14 0 1,0 -28,0z" />
+              <path
+                  android:fillColor="#FFFFFF"
+                  android:pathData="M46,61a8,8 0 1,0 16,0a8,8 0 1,0 -16,0z" />
+          </vector>
+          __END_6__
+          mkdir -p app/src/main/java/com/lanshare/cam
+          cat > app/src/main/java/com/lanshare/cam/MainActivity.java <<'__END_7__'
+          package com.lanshare.cam;
+
+          import android.app.Activity;
+          import android.app.AlertDialog;
+          import android.content.ContentValues;
+          import android.content.Intent;
+          import android.content.SharedPreferences;
+          import android.net.Uri;
+          import android.os.Bundle;
+          import android.provider.MediaStore;
+          import android.text.InputType;
+          import android.view.Menu;
+          import android.view.MenuItem;
+          import android.webkit.ValueCallback;
+          import android.webkit.WebChromeClient;
+          import android.webkit.WebResourceError;
+          import android.webkit.WebResourceRequest;
+          import android.webkit.WebSettings;
+          import android.webkit.WebView;
+          import android.webkit.WebViewClient;
+          import android.widget.EditText;
+          import android.widget.LinearLayout;
+          import android.widget.Toast;
+
+          /** * تطبيق بسيط: يفتح صفحة "كاميرا -> الكمبيوتر" الخاصة ببرنامج LanShareOCR * ويدعم التصوير بالكاميرا واختيار الصور من المعرض داخل الصفحة. */
+          public class MainActivity extends Activity {
+
+              private static final int REQ_FILE = 1;
+              private static final int MENU_CHANGE = 1;
+              private static final int MENU_RELOAD = 2;
+
+              private WebView web;
+              private SharedPreferences prefs;
+              private ValueCallback<Uri[]> fileCallback;
+              private Uri cameraUri;
+              private boolean errorShowing = false;
+
+              @Override
+              protected void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+                  prefs = getSharedPreferences("cfg", MODE_PRIVATE);
+
+                  web = new WebView(this);
+                  setContentView(web);
+
+                  WebSettings s = web.getSettings();
+                  s.setJavaScriptEnabled(true);
+                  s.setDomStorageEnabled(true);
+                  s.setAllowFileAccess(false);
+
+                  web.setWebViewClient(new WebViewClient() {
+                      @Override
+                      public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                          if (request.isForMainFrame()) {
+                              showError();
+                          }
+                      }
+                  });
+
+                  web.setWebChromeClient(new WebChromeClient() {
+                      @Override
+                      public boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> callback,
+                                                       FileChooserParams params) {
+                          return openChooser(callback, params);
+                      }
+                  });
+
+                  loadSaved();
+              }
+
+              // ------------------------------------------------------------ الاتصال
+
+              private void loadSaved() {
+                  String url = prefs.getString("url", "");
+                  if (url.isEmpty()) {
+                      askAddress();
+                  } else {
+                      web.loadUrl(url);
+                  }
+              }
+
+              private void askAddress() {
+                  final boolean hasSaved = !prefs.getString("url", "").isEmpty();
+
+                  LinearLayout box = new LinearLayout(this);
+                  box.setOrientation(LinearLayout.VERTICAL);
+                  int pad = (int) (20 * getResources().getDisplayMetrics().density);
+                  box.setPadding(pad, pad / 2, pad, 0);
+
+                  final EditText addr = new EditText(this);
+                  addr.setHint("رابط الموبايل أو 192.168.1.5:8000");
+                  addr.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
+                  addr.setSingleLine(true);
+                  addr.setText(prefs.getString("raw", ""));
+
+                  final EditText pin = new EditText(this);
+                  pin.setHint("رمز PIN (لو مش موجود داخل الرابط)");
+                  pin.setInputType(InputType.TYPE_CLASS_NUMBER);
+                  pin.setSingleLine(true);
+
+                  box.addView(addr);
+                  box.addView(pin);
+
+                  AlertDialog.Builder b = new AlertDialog.Builder(this)
+                          .setTitle("عنوان الكمبيوتر")
+                          .setMessage("انسخ PHONE LINK من نافذة البرنامج على الكمبيوتر والصقه هنا")
+                          .setView(box)
+                          .setCancelable(hasSaved)
+                          .setPositiveButton("اتصال", (d, w) ->
+                                  connect(addr.getText().toString(), pin.getText().toString()));
+                  if (hasSaved) {
+                      b.setNegativeButton("إلغاء", null);
+                  }
+                  b.show();
+              }
+
+              private void connect(String raw, String pinText) {
+                  raw = raw.trim();
+                  pinText = pinText.trim();
+                  if (raw.isEmpty()) {
+                      Toast.makeText(this, "اكتب عنوان الكمبيوتر", Toast.LENGTH_SHORT).show();
+                      askAddress();
+                      return;
+                  }
+                  String full = raw;
+                  if (!full.startsWith("http://") && !full.startsWith("https://")) {
+                      full = "http://" + full;
+                  }
+                  Uri u = Uri.parse(full);
+                  String host = u.getHost();
+                  if (host == null || host.isEmpty()) {
+                      Toast.makeText(this, "العنوان غير صحيح", Toast.LENGTH_SHORT).show();
+                      askAddress();
+                      return;
+                  }
+                  int port = u.getPort() == -1 ? 8000 : u.getPort();
+                  String pin = u.getQueryParameter("pin");
+                  if (pin == null || pin.isEmpty()) {
+                      pin = pinText;
+                  }
+                  String url = "http://" + host + ":" + port + "/phone";
+                  if (!pin.isEmpty()) {
+                      url += "?pin=" + Uri.encode(pin);
+                  }
+                  prefs.edit().putString("url", url).putString("raw", raw).apply();
+                  web.loadUrl(url);
+              }
+
+              private void showError() {
+                  if (errorShowing) {
+                      return;
+                  }
+                  errorShowing = true;
+                  new AlertDialog.Builder(this)
+                          .setTitle("تعذّر الاتصال بالكمبيوتر")
+                          .setMessage("تأكد أن البرنامج شغّال على الكمبيوتر وأن الموبايل على نفس الواي فاي.")
+                          .setPositiveButton("إعادة المحاولة", (d, w) -> {
+                              errorShowing = false;
+                              loadSaved();
+                          })
+                          .setNegativeButton("تغيير العنوان", (d, w) -> {
+                              errorShowing = false;
+                              askAddress();
+                          })
+                          .setOnCancelListener(d -> errorShowing = false)
+                          .show();
+              }
+
+              // ------------------------------------------------------------ الكاميرا / المعرض
+
+              private boolean openChooser(ValueCallback<Uri[]> callback, WebChromeClient.FileChooserParams params) {
+                  if (fileCallback != null) {
+                      fileCallback.onReceiveValue(null);
+                  }
+                  fileCallback = callback;
+                  cameraUri = null;
+
+                  Intent camera = null;
+                  try {
+                      ContentValues v = new ContentValues();
+                      v.put(MediaStore.Images.Media.DISPLAY_NAME, "scan_" + System.currentTimeMillis() + ".jpg");
+                      v.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+                      v.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/LanShareCam");
+                      cameraUri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, v);
+                      if (cameraUri != null) {
+                          camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                          camera.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
+                          camera.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+                                  | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                      }
+                  } catch (Exception e) {
+                      cameraUri = null;
+                      camera = null;
+                  }
+
+                  Intent toLaunch;
+                  if (params.isCaptureEnabled() && camera != null) {
+                      // الصفحة طلبت الكاميرا مباشرة
+                      toLaunch = camera;
+                  } else {
+                      Intent gallery = new Intent(Intent.ACTION_GET_CONTENT);
+                      gallery.addCategory(Intent.CATEGORY_OPENABLE);
+                      gallery.setType("image/*");
+                      if (params.getMode() == WebChromeClient.FileChooserParams.MODE_OPEN_MULTIPLE) {
+                          gallery.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                      }
+                      toLaunch = Intent.createChooser(gallery, "اختر الصورة");
+                      if (camera != null) {
+                          toLaunch.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[]{camera});
+                      }
+                  }
+
+                  try {
+                      startActivityForResult(toLaunch, REQ_FILE);
+                  } catch (Exception e) {
+                      finishChooser(null);
+                      Toast.makeText(this, "تعذّر فتح الكاميرا", Toast.LENGTH_SHORT).show();
+                      return false;
+                  }
+                  return true;
+              }
+
+              @Override
+              protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+                  if (requestCode != REQ_FILE) {
+                      super.onActivityResult(requestCode, resultCode, data);
+                      return;
+                  }
+                  Uri[] result = null;
+                  if (resultCode == RESULT_OK) {
+                      if (data != null && data.getClipData() != null) {
+                          int n = data.getClipData().getItemCount();
+                          result = new Uri[n];
+                          for (int i = 0; i < n; i++) {
+                              result[i] = data.getClipData().getItemAt(i).getUri();
+                          }
+                      } else if (data != null && data.getData() != null) {
+                          result = new Uri[]{data.getData()};
+                      } else if (cameraUri != null) {
+                          result = new Uri[]{cameraUri};
+                      }
+                  }
+                  finishChooser(result);
+              }
+
+              private void finishChooser(Uri[] result) {
+                  boolean usedCamera = result != null && cameraUri != null
+                          && result.length == 1 && cameraUri.equals(result[0]);
+                  if (cameraUri != null && !usedCamera) {
+                      try {
+                          getContentResolver().delete(cameraUri, null, null);
+                      } catch (Exception ignored) {
+                      }
+                  }
+                  cameraUri = null;
+                  if (fileCallback != null) {
+                      fileCallback.onReceiveValue(result);
+                      fileCallback = null;
+                  }
+              }
+
+              // ------------------------------------------------------------ القائمة
+
+              @Override
+              public boolean onCreateOptionsMenu(Menu menu) {
+                  menu.add(0, MENU_RELOAD, 0, "تحديث");
+                  menu.add(0, MENU_CHANGE, 1, "تغيير عنوان الكمبيوتر");
+                  return true;
+              }
+
+              @Override
+              public boolean onOptionsItemSelected(MenuItem item) {
+                  if (item.getItemId() == MENU_CHANGE) {
+                      askAddress();
+                      return true;
+                  }
+                  if (item.getItemId() == MENU_RELOAD) {
+                      loadSaved();
+                      return true;
+                  }
+                  return super.onOptionsItemSelected(item);
+              }
+
+              @Override
+              public void onBackPressed() {
+                  if (web.canGoBack()) {
+                      web.goBack();
+                  } else {
+                      super.onBackPressed();
+                  }
+              }
+
+              @Override
+              protected void onDestroy() {
+                  if (web != null) {
+                      web.destroy();
+                  }
+                  super.onDestroy();
+              }
+          }
+          __END_7__
+
+      - name: Build APK
+        run: gradle assembleDebug --no-daemon --stacktrace
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk LanShareCam.apk
+
+      - name: Upload artifact (zip)
+        uses: actions/upload-artifact@v4
         with:
-          name: JudicialAgenda-APK
-          path: proj/app/build/outputs/apk/debug/*.apk
+          name: LanShareCam-apk
+          path: LanShareCam.apk
+
+      - name: Publish release (direct APK link)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "apk-${{ github.run_number }}" LanShareCam.apk \
+            --repo "${{ github.repository }}" \
+            --title "LanShareCam APK #${{ github.run_number }}" \
+            --notes "Debug APK built by GitHub Actions"
